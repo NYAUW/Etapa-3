@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="201" failures="0" name="br.com.contmatic.empresa.TestAllClass" time="0.74" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
+    <property name="java.vm.version" value="25.191-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\ProjetoEtapa1"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\ProjetoEtapa1"/>
+    <property name="java.runtime.version" value="1.8.0_191-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\LUCAS~1.RIB\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf9121197780868860265.tmp"/>
+    <property name="jansi.force" value="true"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\adb;C:\ProgramData\chocolatey\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\lucas.ribeiro\AppData\Roaming\npm;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\lucas.ribeiro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas.ribeiro\AppData\Local\GitHubDesktop\bin;C:\Users\lucas.ribeiro\Documents\spring-tool-suite-4-4.5.0.RELEASE-e4.14.0-win32.win32.x86_64.self-extracting\contents\sts-4.5.0.RELEASE;;."/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\lucas.ribeiro"/>
+    <property name="user.timezone" value="GMT-03:00"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="lucas.ribeiro"/>
+    <property name="java.class.path" value="C:\Users\lucas.ribeiro\Documents\spring-tool-suite-4-4.5.0.RELEASE-e4.14.0-win32.win32.x86_64.self-extracting\contents\sts-4.5.0.RELEASE\plugins\org.eclipse.m2e.maven.runtime_1.14.0.20191209-1923\jars\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_191\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install -Dstyle.color=always"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="pt"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_191"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_191\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\ProjetoEtapa1\EMBEDDED"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_nome_completo_proprietario_vazio" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_vazia" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_nome_completo_proprietario_com_numeros" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_com_especiais_e_numeros" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_conferir_saida_nome_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_nome_blank" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_entrada_de_dados_razao_social_com_especos_apenas" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_construtor_com_dados_iguais" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_proprietarios_incompleto" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_endereco_gerados_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_dados_gerados_razao_social_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_proprietarios_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_entrada_de_dados_telefones" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_endereco_correto" time="0.006"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_entrada_de_dados_razao_social_com_numeros_letras" time="0.006"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_construtor_da_classe_com_os_mesmos_dados" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_valido_simulado_com_entrada_de_dados" time="0.006"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_nulo" time="0.006"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_empty" time="0.006"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_nome_com_numeros" time="0.01"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_nome_completo_proprietario_com_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_proprietarios_com_entrada_numerica" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_classes_iguais_com_novo_objeto" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_conferir_saida_proprietarios_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_nome_null" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_conferir_saida_razao_social_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_setar_entrada_nome_empresa_simulando_entrada_do_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_proprietarios_vazioa" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_telefone_nulo" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_validar_cnpj_iguais" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_conferir_saida_cnpj_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_com_sem_espaco" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_aceitar_entrada_proprietario_not_null_gerado_com_objeto_fake" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_endereco_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_telefone_correto" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_nome_completo_proprietario_simulado_com_entrada_de_dados" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_igualdade_de_classes_null" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_setar_endereco_simulando_entrada_de_dados_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_nome_somente_letras" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_com_numeros" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_entrada_de_dados_razao_social_com_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_mostrar_as_classes_e_construtores_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_com_acentuação" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_valido_gerado_pelo_objeto_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_nome_completo_proprietario_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_entrada_de_dados_razao_social" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_comparar_as_classes_diferentes" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_com_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_completa" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_invalido_com_letras_e_numeros" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_armazenar_entrada_nome_empresa_com_objeto_fake" time="0.007"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_conferir_saida_telefone_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_conferir_saida_endereco_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_invalido_com_numeros_incompletos" time="0.007"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_nula" time="0.006"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_cnpj_invalido_com_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_endereco_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_proprietarios_com_entrada_valida" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.EmpresaTest" name="deve_verificar_razao_social_incompleta" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_conferir_saida_cargo_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_objeto_das_classes" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_comparar_objetos_da_classe" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_conferir_saida_nome_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_com_entrada_especial" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_atendente_simulando_entrada_de_dados_do_usuario" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_com_entrada_numerica" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="verifica_classes_iguais_hashcode" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_com_entrada_nula" time="0.003"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_comparar_dados_do_construtor" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_setar_salario_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_classes_iguais" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_especiais" time="0.003"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_conferir_saida_codigo_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_armazenar_salario_gerado_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_auxiliar_simulando_entrada_de_dados_do_usuario" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_gerados_com_objetos_fake" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_codigo_0" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_simulando_entrada_de_dados_do_usuario" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_salario_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_se_a_classe_contem_dados_nulos" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_conferir_saida_salario_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_setar_salario_simulando_entrada_de_dados" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_tecnico_simulando_entrada_de_dados_do_usuario" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_com_entrada_blank" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_nuloo" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_vazio" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_gerado_com_objetos_fake" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_classes_iguais_com_equals" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_incompleto" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_codigo_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_mostrar_conteudo_da_classe" time="0.001"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_armazenar_codigo_simulado_com_entrada_de_dados" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_cargo_numerico" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_armazenar_codigo_gerados_aleatoriamente_com_objetos_fake" time="0.005"/>
+  <testcase classname="br.com.contmatic.empresa.FuncionarioTest" name="deve_verificar_nome_com_entrada_somente_numeros" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_user" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_vazia" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_rg" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_rg_to_string" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_nome_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_caracteres_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_letras" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_com_br" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_nulo" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_somente_especiais" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_construtor_da_classe_com_os_mesmos_dados" time="0"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_senha_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_o_com" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_email_correto_simulando_o_comportamento_do_usuario" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_correto_simulando_o_comportamento_do_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_correto_menor_que_50_simulando_o_comportamento_do_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_email" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_correto" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_dominio" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_cpf_to_string" time="0"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_incorreto_blank_simulando_o_comportamento_do_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_invalidar_caso_nome_null" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_nula" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_sem_os_digitos_verificadores" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_maiusculo" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_vazio" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_nulo" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes_null" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_incorreto_menor_que_2_simulando_o_comportamento_do_usuario" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_somente_numeros" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_o_ponto" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_cpf_not_null" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_empty" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_somente_letras" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_incorreto_maior_que_50_simulando_o_comportamento_do_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_correto_com_no_minimo_2_letras_simulando_o_comportamento_do_usuario" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_sem_acentuação" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes_ocm_novo_objeto" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_desigualdade_de_classes" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_imprimir_conteudp_da_classe" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_entrada_senha" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_dominio_especial" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_email_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_espaço" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_dominio_numerico" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_com_caracteres_especiais" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes_hashcode" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_acentuação" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_se_nome_contem_numerico" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_os_digitos_verificadores_incorretos" time="0.004"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_com_caracteres_especiais_e_numeros" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_incompleto" time="0.004"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_ramal_gerado_aleatoriamente_com_objetos_fake" time="0.011"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_numero_com_caractere" time="0.005"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_tipo_gerado_aleatoriamente_com_objetos_fake" time="0.005"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_verificar_ramal_nulo" time="0.005"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_numero_gerado_automaticamente_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_ddd" time="0.003"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_verificar_tipo_nulo" time="0.003"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_setar_tipo_manualmente_simulando_entrada_de_dados_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_numero_null" time="0.004"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_verificar_ramal_vazio" time="0.003"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_setar_telefone_manualmente_simulando_entrada_de_dados_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_numero_com_caractere_e_numeros" time="0.003"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_ddd_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_setar_ramal_simulando_entrada_de_dados_usuario" time="0.003"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_numero_invalido" time="0.003"/>
+  <testcase classname="br.com.contmatic.telefone.TelefoneTest" name="deve_armazenar_numero_vazio" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_bairro_simulando_entrada_de_dados_do_usuario" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_bairro_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_setar_cep_simulando_entrada_de_dados_do_usuario" time="0.006"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_tipo_nulo" time="0.005"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_rua_gerada_aleatoriamente_com_os_objetos_fake" time="0.005"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_bairro_vazio" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_incompleto" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_regiao_gerado_com_objetos_fake" time="0"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_rua_numerica" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_setar_numero_simulando_entrada_de_dados_do_usuario" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_numero_gerado_aleatoriamente_com_objetos_fake" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_simulando_entrada_de_dados_usuario" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_vazio" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_bairro_gerado_com_objetos_fake" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_nulo" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_bairro_numerico" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_tipo_gerado_sorteado_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_rua_vazia" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_tipo_setado_diretamente_simulando_entrada_de_dados_do_usuario" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_comparar_as_classes_com_equals" time="0"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_numero_maior_que_um" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_numerico" time="0.006"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_com_letras" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_comparar_as_classes_com_hashcode" time="0"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_rua_simulando_entrada_de_dados_do_usuario" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_cep_gerado_automaricamente_com_objetos_fake" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_rua_nula" time="0.004"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_nulo" time="0.003"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_vazio" time="0.004"/>
+  <testcase classname="br.com.contmatic.FixtureFactory.FixtureFactoryTest" name="load" time="0"/>
+</testsuite>

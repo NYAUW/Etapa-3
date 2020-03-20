@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="58" failures="0" name="br.com.contmatic.cliente.CadastroTest" time="1.027" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
+    <property name="java.vm.version" value="25.191-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\ProjetoEtapa1"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\ProjetoEtapa1"/>
+    <property name="java.runtime.version" value="1.8.0_191-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\LUCAS~1.RIB\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf9121197780868860265.tmp"/>
+    <property name="jansi.force" value="true"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\adb;C:\ProgramData\chocolatey\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\lucas.ribeiro\AppData\Roaming\npm;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\lucas.ribeiro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas.ribeiro\AppData\Local\GitHubDesktop\bin;C:\Users\lucas.ribeiro\Documents\spring-tool-suite-4-4.5.0.RELEASE-e4.14.0-win32.win32.x86_64.self-extracting\contents\sts-4.5.0.RELEASE;;."/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\lucas.ribeiro"/>
+    <property name="user.timezone" value="GMT-03:00"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="lucas.ribeiro"/>
+    <property name="java.class.path" value="C:\Users\lucas.ribeiro\Documents\spring-tool-suite-4-4.5.0.RELEASE-e4.14.0-win32.win32.x86_64.self-extracting\contents\sts-4.5.0.RELEASE\plugins\org.eclipse.m2e.maven.runtime_1.14.0.20191209-1923\jars\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_191\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install -Dstyle.color=always"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="pt"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_191"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_191\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\ProjetoEtapa1\EMBEDDED"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_user" time="0.581"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_vazia" time="0.025"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_rg" time="0.015"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_rg_to_string" time="0.018"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_nome_to_string" time="0.002"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha" time="0.012"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_caracteres_especiais" time="0.013"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_letras" time="0.012"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_com_br" time="0.013"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email" time="0.012"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_nulo" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_somente_especiais" time="0.01"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_construtor_da_classe_com_os_mesmos_dados" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_senha_to_string" time="0.002"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_o_com" time="0.01"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_email_correto_simulando_o_comportamento_do_usuario" time="0.012"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_correto_simulando_o_comportamento_do_usuario" time="0.009"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_correto_menor_que_50_simulando_o_comportamento_do_usuario" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_email" time="0.011"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_correto" time="0.012"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_dominio" time="0.011"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_cpf_to_string" time="0.002"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_incorreto_blank_simulando_o_comportamento_do_usuario" time="0.01"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_invalidar_caso_nome_null" time="0.01"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_nula" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_sem_os_digitos_verificadores" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_especiais" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_maiusculo" time="0.009"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_vazio" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_nulo" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes_null" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_incorreto_menor_que_2_simulando_o_comportamento_do_usuario" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_somente_numeros" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_sem_o_ponto" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_cpf_not_null" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_empty" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_senha_somente_letras" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_incorreto_maior_que_50_simulando_o_comportamento_do_usuario" time="0.012"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_correto_com_no_minimo_2_letras_simulando_o_comportamento_do_usuario" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_sem_acentuação" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes_ocm_novo_objeto" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_desigualdade_de_classes" time="0.003"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_imprimir_conteudp_da_classe" time="0.002"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_entrada_senha" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_dominio_especial" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_conferir_saida_email_to_string" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_espaço" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_simuloar_entrada_usuario_no_email_com_dominio_numerico" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_com_caracteres_especiais" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes" time="0.001"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_nulo" time="0.008"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_igualdade_de_classes_hashcode" time="0.002"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_acentuação" time="0.006"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_se_nome_contem_numerico" time="0.009"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_cpf_com_os_digitos_verificadores_incorretos" time="0.007"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_armazenar_entrada_de_dados_de_nome_com_caracteres_especiais_e_numeros" time="0.005"/>
+  <testcase classname="br.com.contmatic.cliente.CadastroTest" name="deve_verificar_rg_incompleto" time="0.005"/>
+</testsuite>
