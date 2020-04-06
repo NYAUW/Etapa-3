@@ -7,9 +7,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
+import br.com.contmatic.connectionMongoDB.MongoDbConnection;
 import br.com.contmatic.easyRandomizer.EasyRandomClass;
 
 /**
@@ -121,7 +123,7 @@ public class FuncionarioTest {
     public void deve_verificar_nome_simulando_entrada_de_dados_do_usuario() {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
         funcionario.setNome("Marcelao Alves");
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getNome()));
     }
 
     @Test
@@ -172,8 +174,7 @@ public class FuncionarioTest {
     @Test
     public void deve_verificar_nome_gerado_com_objetos_fake() {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        funcionario.getNome();
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getNome()));
     }
 
     /**
@@ -182,8 +183,7 @@ public class FuncionarioTest {
     @Test
     public void deve_verificar_cargo_gerados_com_objetos_fake() {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        funcionario.getCargo();
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCargo()));
     }
 
     /**
@@ -207,7 +207,7 @@ public class FuncionarioTest {
     public void deve_verificar_cargo_auxiliar_simulando_entrada_de_dados_do_usuario() {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
         funcionario.setCargo("Auxiliar");
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCargo()));
     }
 
     @Test
@@ -281,7 +281,7 @@ public class FuncionarioTest {
     public void deve_setar_salario_simulando_entrada_de_dados() {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
         funcionario.setSalario(new BigDecimal("5000.00"));
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getSalario()));
     }
 
     @Test
@@ -289,5 +289,11 @@ public class FuncionarioTest {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
         funcionario.setSalario(null);
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+    }
+    
+    @AfterClass
+    public static void envia_para_banco_de_dados() {
+        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        MongoDbConnection.SentoToDatabaseFuncionario(funcionario);
     }
 }

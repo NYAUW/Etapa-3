@@ -7,9 +7,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
+import br.com.contmatic.connectionMongoDB.MongoDbConnection;
 import br.com.contmatic.easyRandomizer.EasyRandomClass;
 
 /**
@@ -438,5 +440,11 @@ public class CadastroTest {
         Cadastro cadastroValidator = randomObject.CadastroRandomizer();
         cadastroValidator.setRg("4881");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(cadastroValidator));
+    }
+    
+    @AfterClass
+    public static void envia_para_banco_de_dados() {
+        Cadastro cadastro = randomObject.CadastroRandomizer();
+        MongoDbConnection.SentToDatabaseCadastro(cadastro);
     }
 }

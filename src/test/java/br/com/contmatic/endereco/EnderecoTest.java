@@ -172,7 +172,7 @@ public class EnderecoTest {
     public void deve_verificar_regiao_simulando_entrada_de_dados_usuario() {
         Endereco endereco = randomObject.EnderecoRandomizer();
         endereco.setRegiao("Zona Leste");
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco.getRegiao()));
     }
 
     /**
