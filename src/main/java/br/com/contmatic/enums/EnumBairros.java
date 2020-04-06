@@ -12,7 +12,7 @@ public enum EnumBairros {
     private EnumBairros(String bairro) {
         this.bairro = bairro;
     }
-
+//Teste
     public String getBairro() {
         return bairro;
     }  
