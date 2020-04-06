@@ -1,4 +1,4 @@
-package br.com.contmatic.EasyRandomizer;
+package br.com.contmatic.easyRandomizer;
 
 import java.math.BigDecimal;
 import java.util.Random;

@@ -8,8 +8,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import br.com.contmatic.EasyRandomizer.EasyRandomClass;
 import br.com.contmatic.annotation.ValidateAnnotations;
+import br.com.contmatic.easyRandomizer.EasyRandomClass;
 
 /**
  * The Class EnderecoTest.
