@@ -13,37 +13,38 @@ import br.com.contmatic.empresa.Empresa;
 import br.com.contmatic.empresa.Funcionario;
 
 public class MongoDbConnection {
+    
+    private static Logger LOGGER = LoggerFactory.getLogger(MongoDbConnection.class);;
 
-	private static Logger LOGGER = LoggerFactory.getLogger("Mongo Connection");
+    private static final String HOST = "localhost"; // endereço ip do banco de dados, no nosso caso local
 
-	private static final String HOST = "localhost"; // endereço ip do banco de dados, no nosso caso local
+    private static final String DB_NAME = "Empresa";
 
-	private static final String DB_NAME = "Empresa";
+    private static MongoClient mongoClient;
 
-	private static MongoClient mongoClient;
+    private static MongoDatabase database = MongoDbConnection.getMongoDatabase();
 
-	private static MongoDatabase database = MongoDbConnection.getMongoDatabase();
+    public static MongoDatabase getMongoDatabase() {
+        mongoClient = new MongoClient(HOST);
+        return mongoClient.getDatabase(DB_NAME);
+    }
 
-	public static MongoDatabase getMongoDatabase() {
-		mongoClient = new MongoClient(HOST);
-		return mongoClient.getDatabase(DB_NAME);
-	}
-
-	public static void SentToDatabaseEmpresa(Empresa empresa) {
+    public static void SentToDatabaseEmpresa(Empresa empresa) {
+        
         MongoCollection<Document> empresaCollection = database.getCollection("Empresa");
         empresaCollection.insertOne(Document.parse(empresa.toString()).append("_id", empresa.getCnpj()));
-        LOGGER.info("Empresa -> Documento " + empresa.toString() + " Inserido com sucesso");
-        }
+        LOGGER.info("Empresa -> Documento nº " + empresaCollection.countDocuments() + " Inserido com sucesso");
+    }
 
-	public static void SentoToDatabaseFuncionario(Funcionario funcionario) {
-		MongoCollection<Document> funcionarioCollection = database.getCollection("Funcionario");
-		funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
-		LOGGER.info("Funcionario -> Documento nº" + funcionario.toString() + "Inserido com sucesso");
-	}
+    public static String SentoToDatabaseFuncionario(Funcionario funcionario) {
+        MongoCollection<Document> funcionarioCollection = database.getCollection("Funcionario");
+        funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
+        return "Funcionario -> Documento nº" + funcionarioCollection.countDocuments() + "Inserido com sucesso";
+    }
 
-	public static void SentToDatabaseCadastro(Cadastro cadastro) {
-		MongoCollection<Document> cadastroCollection = database.getCollection("Cadastro");
-		cadastroCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cadastro.getCpf()));
-		LOGGER.info("Cadastro -> Documento nº" + cadastro.toString() + "Inserido com sucesso");
-	}
+    public static String SentToDatabaseCadastro(Cadastro cadastro) {
+        MongoCollection<Document> cadastroCollection = database.getCollection("Cadastro");
+        cadastroCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cadastro.getCpf()));
+        return "Cadastro -> Documento nº" + cadastroCollection.countDocuments() + "Inserido com sucesso";
+    }
 }
