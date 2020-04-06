@@ -6,9 +6,6 @@ import static br.com.contmatic.constante.ConstanteRegex.SOMENTE_ALFA;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 import static org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -29,7 +26,7 @@ public class Empresa {
 
     /** The cnpj. */
 
-    @NotEmpty(message = ENTRADA_NULA)
+    @NotBlank(message = ENTRADA_NULA)
     @CNPJ(message = "Cnpj Inválido")
     private String cnpj;
 
@@ -53,59 +50,12 @@ public class Empresa {
     private String proprietarios;
 
     /** The telefones. */
-    @NotNull(message = ENTRADA_NULA)
-    private Set<Telefone> telefones;
+    private Telefone telefones;
 
     /** The endereco. */
     @NotNull(message = ENTRADA_NULA)
-    private Set<Endereco> endereco;
+    private Endereco endereco;
 
-    /**
-     * Instantiates a new empresa.
-     */
-    public Empresa() {
-
-    }
-
-    /**
-     * Instantiates a new empresa.
-     *
-     * @param cnpj the cnpj
-     * @param nome the nome
-     * @param razaoSocial the razao social
-     * @param proprietarios the proprietarios
-     * @param telefones the telefones
-     * @param endereco the endereco
-     */
-    public Empresa(String cnpj, String nome, String razaoSocial, String proprietarios, Set<Telefone> telefones, Set<Endereco> endereco) {
-        this.cnpj = cnpj;
-        this.nome = nome;
-        this.razaoSocial = razaoSocial;
-        this.proprietarios = proprietarios;
-        this.telefones = telefones;
-        this.endereco = endereco;
-    }
-
-    /**
-     * Instantiates a new empresa.
-     *
-     * @param cnpj the cnpj
-     * @param nome the nome
-     * @param razaoSocial the razao social
-     * @param proprietarios the proprietarios
-     * @param telefones the telefones
-     * @param endereco the endereco
-     */
-    public Empresa(String cnpj, String nome, String razaoSocial, String proprietarios, Telefone telefones, Endereco endereco) {
-        this.telefones = new HashSet<>();
-        this.endereco = new HashSet<>();
-        this.cnpj = cnpj;
-        this.nome = nome;
-        this.razaoSocial = razaoSocial;
-        this.proprietarios = proprietarios;
-        this.telefones.add(telefones);
-        this.endereco.add(endereco);
-    }
 
     /**
      * Gets the cnpj.
@@ -148,7 +98,7 @@ public class Empresa {
      *
      * @return the telefones
      */
-    public Set<Telefone> getTelefones() {
+    public Telefone getTelefones() {
         return telefones;
     }
 
@@ -157,7 +107,7 @@ public class Empresa {
      *
      * @return the endereco
      */
-    public Set<Endereco> getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
@@ -200,10 +150,10 @@ public class Empresa {
     /**
      * Sets the telefones.
      *
-     * @param telefones the new telefones
+     * @param telefone the new telefones
      */
-    public void setTelefones(Set<Telefone> telefones) {
-        this.telefones = telefones;
+    public void setTelefones(Telefone telefone) {
+        this.telefones = telefone;
     }
 
     /**
@@ -211,7 +161,7 @@ public class Empresa {
      *
      * @param endereco the new endereco
      */
-    public void setEndereco(Set<Endereco> endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 

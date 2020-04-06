@@ -48,29 +48,6 @@ public class Cadastro {
     private String rg;
 
     /**
-     * Instantiates a new cadastro.
-     */
-    public Cadastro() {
-    }
-
-    /**
-     * Instantiates a new cadastro.
-     *
-     * @param nome the nome
-     * @param email the email
-     * @param senha the senha
-     * @param cpf the cpf
-     * @param rg the rg
-     */
-    public Cadastro(String nome, String email, String senha, String cpf, String rg) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.cpf = cpf;
-        this.rg = rg;
-    }
-
-    /**
      * Gets the nome.
      *
      * @return the nome

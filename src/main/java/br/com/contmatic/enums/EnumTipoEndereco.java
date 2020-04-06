@@ -1,9 +1,9 @@
-package br.com.contmatic.endereco;
+package br.com.contmatic.enums;
 
 /**
  * The Enum TipoEndereco.
  */
-public enum TipoEndereco {
+public enum EnumTipoEndereco {
 
                           /** The casa. */
                           CASA("Casa"),
@@ -25,7 +25,7 @@ public enum TipoEndereco {
      *
      * @param tipo the tipo
      */
-    private TipoEndereco(String tipo) {
+    private EnumTipoEndereco(String tipo) {
         this.tipo = tipo;
     }
 }

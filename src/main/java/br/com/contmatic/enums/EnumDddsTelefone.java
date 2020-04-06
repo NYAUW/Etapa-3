@@ -1,6 +1,6 @@
-package br.com.contmatic.telefone;
+package br.com.contmatic.enums;
 
-public enum DddsTelefone {
+public enum EnumDddsTelefone {
                           SAO_PAULO("11"),
                           SAO_JOSE_DOS_CAMPOS("12"),
                           SANTOS("13"),
@@ -71,7 +71,7 @@ public enum DddsTelefone {
 
     private String ddd;
 
-    private DddsTelefone(String ddd) {
+    private EnumDddsTelefone(String ddd) {
         this.setDdd(ddd);
     }
 
@@ -79,7 +79,7 @@ public enum DddsTelefone {
         return ddd;
     }
 
-    public void setDdd(String ddd) {
+    private void setDdd(String ddd) {
         this.ddd = ddd;
     }
 }

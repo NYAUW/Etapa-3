@@ -21,17 +21,15 @@ public class ValidateAnnotations<T> {
      * @param t the t
      * @return the string
      */
-    public boolean returnAnnotationMsgError(T t) {
-
+    public static boolean returnAnnotationMsgError(Object t) {
         Validator validador = Validation.buildDefaultValidatorFactory().getValidator();
-        Set<ConstraintViolation<T>> erros = validador.validate(t);
+        Set<ConstraintViolation<Object>> erros = validador.validate(t);
         List<String> errosMsg = new ArrayList<>();
-        for(ConstraintViolation<T> teste : erros) {
-            errosMsg.add(teste.getMessage());
+        for(ConstraintViolation<Object> violation : erros) {
+            errosMsg.add(violation.getMessage());
         }
-        String verificaErros = errosMsg.toString();
-        errosMsg.toString().replace("[", "").replace("]", "");
-        if (verificaErros.length() > 2) {
+        String verificaErros = errosMsg.toString().replace("[", "").replace("]", "");
+        if ((!(verificaErros.isEmpty() || verificaErros.length() < 2 ))) {
             return true;
         } else {
             return false;

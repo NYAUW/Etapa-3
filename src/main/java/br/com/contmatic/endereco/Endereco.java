@@ -16,6 +16,8 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.hibernate.validator.constraints.Length;
 
+import br.com.contmatic.enums.EnumTipoEndereco;
+
 /**
  * The Class Endereco.
  */
@@ -49,33 +51,7 @@ public class Endereco {
 
     /** The tipo. */
     @NotNull(message = ENTRADA_NULA)
-    private TipoEndereco tipo;
-
-    /**
-     * Instantiates a new endereco.
-     */
-    public Endereco() {
-    }
-
-    /**
-     * Instantiates a new endereco.
-     *
-     * @param rua the rua
-     * @param numero the numero
-     * @param bairro the bairro
-     * @param regiao the regiao
-     * @param cep the cep
-     * @param tipo the tipo
-     */
-    public Endereco(String rua, int numero, String bairro, String regiao, String cep, TipoEndereco tipo) {
-        super();
-        this.bairro = rua;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.regiao = regiao;
-        this.cep = cep;
-        this.tipo = tipo;
-    }
+    private EnumTipoEndereco tipo;
 
     /**
      * Gets the rua.
@@ -127,7 +103,7 @@ public class Endereco {
      *
      * @return the tipo
      */
-    public TipoEndereco getTipo() {
+    public EnumTipoEndereco getTipo() {
         return tipo;
     }
 
@@ -137,7 +113,7 @@ public class Endereco {
      * @param rua the new rua
      */
     public void setRua(String rua) {
-        this.bairro = rua;
+        this.rua = rua;
     }
 
     /**
@@ -152,10 +128,10 @@ public class Endereco {
     /**
      * Sets the bairro.
      *
-     * @param bairro the new bairro
+     * @param string the new bairro
      */
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setBairro(String string) {
+        this.bairro = string;
     }
 
     /**
@@ -181,7 +157,7 @@ public class Endereco {
      *
      * @param tipo the new tipo
      */
-    public void setTipo(TipoEndereco tipo) {
+    public void setTipo(EnumTipoEndereco tipo) {
         this.tipo = tipo;
     }
 

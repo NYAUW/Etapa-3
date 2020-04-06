@@ -48,13 +48,6 @@ public class Funcionario {
 
     /**
      * Instantiates a new funcionario.
-     */
-    public Funcionario() {
-
-    }
-
-    /**
-     * Instantiates a new funcionario.
      *
      * @param nome the nome
      * @param cargo the cargo

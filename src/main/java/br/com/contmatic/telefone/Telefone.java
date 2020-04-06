@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 public class Telefone {
 
     @NotNull(message = ENTRADA_NULA)
-    private DddsTelefone ddd;
+    private String ddd;
 
     /** The numero. */
     @NotEmpty(message = ENTRADA_NULA)
@@ -33,30 +33,9 @@ public class Telefone {
 
     /** The tipo. */
     @NotNull(message = ENTRADA_NULA)
-    private TipoTelefone tipo;
+    private String tipo;
 
-    /**
-     * Instantiates a new telefone.
-     */
-    public Telefone() {
-
-    }
-
-    /**
-     * Instantiates a new telefone.
-     *
-     * @param numero the numero
-     * @param ramal the ramal
-     * @param tipo the tipo
-     */
-    public Telefone(DddsTelefone ddd, String numero, String ramal, TipoTelefone tipo) {
-        this.ddd = ddd;
-        this.numero = numero;
-        this.ramal = ramal;
-        this.tipo = tipo;
-    }
-
-    public DddsTelefone getDdd() {
+    public String getDdd() {
         return ddd;
     }
 
@@ -83,11 +62,11 @@ public class Telefone {
      *
      * @return the tipo
      */
-    public TipoTelefone getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setDdd(DddsTelefone ddd) {
+    public void setDdd(String ddd) {
         this.ddd = ddd;
     }
 
@@ -114,7 +93,7 @@ public class Telefone {
      *
      * @param tipo the new tipo
      */
-    public void setTipo(TipoTelefone tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
