@@ -1,9 +1,9 @@
-package br.com.contmatic.telefone;
+package br.com.contmatic.enums;
 
 /**
  * The Enum TipoTelefone.
  */
-public enum TipoTelefone {
+public enum EnumTipoTelefone {
 
                           /** The fixo. */
                           FIXO("Fixo"),
@@ -19,7 +19,11 @@ public enum TipoTelefone {
      *
      * @param tipo the tipo
      */
-    private TipoTelefone(String tipo) {
+    private EnumTipoTelefone(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 }
