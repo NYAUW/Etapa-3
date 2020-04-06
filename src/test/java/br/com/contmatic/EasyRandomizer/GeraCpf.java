@@ -1,4 +1,4 @@
-package br.com.contmatic.easyRandomizer;
+package br.com.contmatic.EasyRandomizer;
 
 import java.util.Arrays;
 import java.util.Random;

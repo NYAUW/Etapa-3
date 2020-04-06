@@ -10,16 +10,16 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.AfterClass;
 import org.junit.Test;
 
+import br.com.contmatic.EasyRandomizer.EasyRandomClass;
 import br.com.contmatic.annotation.ValidateAnnotations;
 import br.com.contmatic.connectionMongoDB.MongoDbConnection;
-import br.com.contmatic.easyRandomizer.EasyRandomClass;
 
 /**
  * The Class CadastroTest.
  */
 public class CadastroTest {
 
-    private static EasyRandomClass randomObject = EasyRandomClass.InstanciaEasyRandomClass();
+    private static br.com.contmatic.EasyRandomizer.EasyRandomClass randomObject = EasyRandomClass.InstanciaEasyRandomClass();
 
     @Test
     public void deve_verificar_construtor_da_classe_com_os_mesmos_dados() {
