@@ -447,4 +447,16 @@ public class CadastroTest {
         Cadastro cadastro = randomObject.CadastroRandomizer();
         MongoDbConnection.SentToDatabaseCadastro(cadastro);
     }
+    
+    @AfterClass
+    public static void deve_enviar_e_deletar_do_banco_de_dados() {
+        Cadastro cadastro = randomObject.CadastroRandomizer();
+        MongoDbConnection.DeleteDocumentInCadastro(cadastro);
+    }
+    
+    @AfterClass
+    public static void deve_enviar_e_atualizar_cadastro_banco_de_dados() {
+        Cadastro cadastro = randomObject.CadastroRandomizer();
+        MongoDbConnection.UpdateDocumentInCadastro(cadastro);
+    }
 }

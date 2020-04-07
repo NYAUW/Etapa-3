@@ -455,8 +455,20 @@ public class EmpresaTest {
     }
     
     @AfterClass
-    public static void envia_para_base_de_dados() {
+    public static void deve_enviar_para_base_de_dados() {
         Empresa empresa = randomObject.EmpresaRandomizer();
         MongoDbConnection.SentToDatabaseEmpresa(empresa);
+    }
+    
+    @AfterClass
+    public static void deve_enviar_e_deletar_documento_da_collection() {
+        Empresa empresa = randomObject.EmpresaRandomizer();
+        MongoDbConnection.DeleteDocumentInEmpresa(empresa);
+    }
+    
+    @AfterClass
+    public static void deve_atualizar_nome_empresa_banco_de_dados() {
+        Empresa empresa = randomObject.EmpresaRandomizer();
+        MongoDbConnection.UpdateDocumentInEmpresa(empresa);
     }
 }

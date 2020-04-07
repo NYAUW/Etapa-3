@@ -296,4 +296,16 @@ public class FuncionarioTest {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
         MongoDbConnection.SentoToDatabaseFuncionario(funcionario);
     }
+    
+    @AfterClass
+    public static void deve_enviar_e_deletar_banco_de_dados() {
+        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        MongoDbConnection.DeleteDocumentInFuncionario(funcionario);
+    }
+    
+    @AfterClass
+    public static void deve_enviar_e_atualizar_banco_de_dados() {
+        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        MongoDbConnection.UpdateDocumentInFuncionario(funcionario);
+    }
 }
