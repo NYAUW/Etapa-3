@@ -471,4 +471,10 @@ public class EmpresaTest {
         Empresa empresa = randomObject.EmpresaRandomizer();
         MongoDbConnection.UpdateDocumentInEmpresa(empresa);
     }
+    
+    @AfterClass
+    public static void deve_retornar_empresa_em_json() {
+        Empresa empresa = randomObject.EmpresaRandomizer();
+        MongoDbConnection.FindDocumentInEmpresa(empresa);
+    }
 }
