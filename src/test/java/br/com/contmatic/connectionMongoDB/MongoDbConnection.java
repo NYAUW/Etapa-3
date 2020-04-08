@@ -2,7 +2,6 @@ package br.com.contmatic.connectionMongoDB;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,18 +9,16 @@ import com.github.javafaker.Faker;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import br.com.contmatic.cliente.Cadastro;
-import br.com.contmatic.easyRandomizer.EasyRandomClass;
 import br.com.contmatic.empresa.Empresa;
 import br.com.contmatic.empresa.Funcionario;
 
 public class MongoDbConnection {
     
     private static final Logger LOGGER = LoggerFactory.getLogger("MongoDbConnection");
-    
-    private static EasyRandomClass randomObject = EasyRandomClass.InstanciaEasyRandomClass();
     
     private static Faker faker = new Faker();
 
@@ -128,18 +125,42 @@ public class MongoDbConnection {
     }
     
     public static void FindDocumentInCadastro(Cadastro cadastro) {
-        MongoCollection<Document> empresaCollection = database.getCollection("Cadastro");
-        empresaCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cadastro.getCpf()));
+        MongoCollection<Document> cadastroCollection = database.getCollection("Cadastro");
+        cadastroCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cadastro.getCpf()));
         Bson filter = new Document("_id", cadastro.getCpf());
-        FindIterable<Document> search = empresaCollection.find(filter);
+        FindIterable<Document> search = cadastroCollection.find(filter);
         LOGGER.info("PROCURA CADASTRO: Documento {} encontrado com sucesso.", search.first().toJson());
     }
     
     public static void FindDocumentInFuncionario(Funcionario funcionario) {
-        MongoCollection<Document> empresaCollection = database.getCollection("Funcionario");
-        empresaCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
+        MongoCollection<Document> funcionarioCollection = database.getCollection("Funcionario");
+        funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
         Bson filter = new Document("_id", funcionario.getCodigo());
-        FindIterable<Document> search = empresaCollection.find(filter);
+        FindIterable<Document> search = funcionarioCollection.find(filter);
         LOGGER.info("PROCURA FUNCIONARIO: Documento {} encontrado com sucesso.", search.first().toJson());
+    }
+    
+    public static void ReturnDocumentsInEmpresaCollection() {
+    	MongoCollection<Document> empresaCollection = database.getCollection("Empresa");
+    	MongoCursor<Document> cursor = empresaCollection.find().iterator();
+    	while(cursor.hasNext()) {
+    		LOGGER.info("DOCUMENTOS EMPRESA: Documento {} encontrado com sucesso", cursor.next());
+    	}
+    }
+    
+    public static void ReturnDocumentsInCadastroCollection() {
+    	MongoCollection<Document> cadastroCollection = database.getCollection("Empresa");
+    	MongoCursor<Document> cursor = cadastroCollection.find().iterator();
+    	while(cursor.hasNext()) {
+    		LOGGER.info("DOCUMENTOS CADASTRO: Documento {} encontrado com sucesso", cursor.next());
+    	}
+    }
+    
+    public static void ReturnDocumentsInFuncionarioCollection() {
+    	MongoCollection<Document> funcionarioCollection = database.getCollection("Empresa");
+    	MongoCursor<Document> cursor = funcionarioCollection.find().iterator();
+    	while(cursor.hasNext()) {
+    		LOGGER.info("DOCUMENTOS CADASTRO: Documento {} encontrado com sucesso", cursor.next());
+    	}
     }
 }

@@ -473,8 +473,13 @@ public class EmpresaTest {
     }
     
     @AfterClass
-    public static void deve_retornar_empresa_em_json() {
+    public static void deve_retornar_empresa_aleatoria() {
         Empresa empresa = randomObject.EmpresaRandomizer();
         MongoDbConnection.FindDocumentInEmpresa(empresa);
+    }
+    
+    @AfterClass
+    public static void deve_retornar_todos_documentos_empresa() {
+    	MongoDbConnection.ReturnDocumentsInEmpresaCollection();
     }
 }

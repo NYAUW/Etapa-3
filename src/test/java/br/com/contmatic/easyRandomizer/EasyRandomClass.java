@@ -38,7 +38,7 @@ public class EasyRandomClass {
         EasyRandom easyFakeObject = new EasyRandom();
         Empresa empresa = easyFakeObject.nextObject(Empresa.class);
         empresa.setCnpj(GeraCnpj());
-        empresa.setNome(faker.leagueOfLegends().champion());
+        empresa.setNome(faker.app().name());
         empresa.setRazaoSocial(faker.lorem().sentence());
         empresa.setProprietarios(faker.funnyName().name());
         empresa.setTelefones(TelefoneRandomizer());

@@ -459,4 +459,15 @@ public class CadastroTest {
         Cadastro cadastro = randomObject.CadastroRandomizer();
         MongoDbConnection.UpdateDocumentInCadastro(cadastro);
     }
+    
+    @AfterClass
+    public static void deve_encontrar_documento_aleatorio_cadastro() {
+    	 Cadastro cadastro = randomObject.CadastroRandomizer();
+         MongoDbConnection.FindDocumentInCadastro(cadastro);;
+    }
+    
+    @AfterClass
+    public static void deve_retornar_todos_documentos_cadastro_em_json() {
+    	MongoDbConnection.ReturnDocumentsInCadastroCollection();
+    }
 }

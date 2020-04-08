@@ -308,4 +308,15 @@ public class FuncionarioTest {
         Funcionario funcionario = randomObject.FuncionarioRandomizer();
         MongoDbConnection.UpdateDocumentInFuncionario(funcionario);
     }
+    
+    @AfterClass
+    public static void deve_encontrar_documento_aleatorio_funcionario() {
+    	 Funcionario funcionario = randomObject.FuncionarioRandomizer();
+         MongoDbConnection.FindDocumentInFuncionario(funcionario);
+    }
+    
+    @AfterClass
+    public static void deve_retornar_todos_documentos_cadastro_em_json() {
+    	MongoDbConnection.ReturnDocumentsInFuncionarioCollection();
+    }
 }
