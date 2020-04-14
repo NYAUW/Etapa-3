@@ -13,12 +13,15 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import br.com.contmatic.cliente.Cadastro;
+import br.com.contmatic.easyRandomizer.EasyRandomClass;
 import br.com.contmatic.empresa.Empresa;
 import br.com.contmatic.empresa.Funcionario;
 
 public class MongoDbConnection {
     
     private static final Logger LOGGER = LoggerFactory.getLogger("MongoDbConnection");
+    
+    private static Empresa empresa = EasyRandomClass.InstanciaEasyRandomClass().EmpresaRandomizer();
     
     private static Faker faker = new Faker();
 
@@ -116,12 +119,16 @@ public class MongoDbConnection {
         LOGGER.info("FUNCIONARIO UPDATE: Entradas atualizadas do documento {} de {} para {} com sucesso",funcionarioCollection.countDocuments(), oldName, newName);
     }
     
-    public static void FindDocumentInEmpresa(Empresa empresa) {
+    public static Empresa FindDocumentInEmpresa() {
         MongoCollection<Document> empresaCollection = database.getCollection("Empresa");
-        empresaCollection.insertOne(Document.parse(empresa.toString()).append("_id", empresa.getCnpj()));
-        Bson filter = new Document("_id", empresa.getCnpj());
+        Bson filter = new Document("_id", "56063119978303");
         FindIterable<Document> search = empresaCollection.find(filter);
-        LOGGER.info("PROCURA EMPRESA: Documento {} encontrado com sucesso.", search.first().toJson());
+        empresa.setCnpj(search.first().getString("cnpj"));
+        empresa.setNome(search.first().getString("nome"));
+        empresa.setProprietarios(search.first().getString("proprietarios"));
+        empresa.setRazaoSocial(search.first().getString("razaoSocial"));
+        LOGGER.info("EMPRESA ENCONTRADA: O documento {} foi encontrado com sucesso", empresa.toString());
+        return empresa;
     }
     
     public static void FindDocumentInCadastro(Cadastro cadastro) {
