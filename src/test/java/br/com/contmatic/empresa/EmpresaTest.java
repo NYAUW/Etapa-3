@@ -442,8 +442,6 @@ public class EmpresaTest {
 	@Test
 	public void deve_setar_endereco_simulando_entrada_de_dados_com_objetos_fake() {
 		Empresa empresa = randomObject.EmpresaRandomizer();
-		Endereco endereco = randomObject.EnderecoRandomizer();
-		empresa.setEndereco(endereco);
 		assertFalse(ValidateAnnotations.returnAnnotationMsgError(empresa.getEndereco()));
 	}
 
@@ -515,6 +513,109 @@ public class EmpresaTest {
 		empresaConsulta.setNome("");
 		assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
 	}
+	
+	@Test
+	public void deve_verificar_nome_invalido_alfanumerico_mongodb() {
+	    Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setNome("Luc4as 4lv3s");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+	}
+	
+	@Test
+    public void deve_verificar_nome_invalido_nonspace_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setNome("LucasAlves");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	@Test
+    public void deve_verificar_nome_invalido_especial_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setNome("Lucas @lves");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_nome_valido_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setNome("Lucas @lves");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_proprietario_invalido_numerico_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setProprietarios("98549");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_proprietario_invalido_blank_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setProprietarios("");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_proprietario_invalido_alfanumerico_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setProprietarios("Luc4as 4lv3s");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_proprietario_invalido_nonspace_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setProprietarios("LucasAlves");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_proprietario_invalido_especial_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setProprietarios("Lucas @lves");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_proprietario_valido_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setProprietarios("Test Unitario");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_razao_invalido_null_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setRazaoSocial(null);
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_razao_invalido_blank_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setRazaoSocial("");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_razao_invalido_numerica_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setRazaoSocial("93028093248950938509853468034 3409435 45039 50 934 ");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_razao_invalido_menos_de_dez_caracteres_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        empresaConsulta.setRazaoSocial("tres");
+        assertTrue(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta));
+    }
+	
+	@Test
+    public void deve_verificar_razao_valido_mongodb() {
+        Empresa empresaConsulta = MongoDbConnection.FindDocumentInEmpresa();
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(empresaConsulta.getRazaoSocial()));
+    }
 	
 	@AfterClass
 	public static void deve_enviar_para_base_de_dados() {

@@ -129,7 +129,7 @@ public class EnderecoTest {
     public void deve_armazenar_bairro_simulando_entrada_de_dados_do_usuario() {
         Endereco endereco = randomObject.EnderecoRandomizer();
         endereco.setBairro(SAPOPEMBA.getBairro());
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco.getBairro()));
     }
 
     @Test

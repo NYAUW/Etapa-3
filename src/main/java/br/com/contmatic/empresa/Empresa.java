@@ -55,7 +55,8 @@ public class Empresa {
     /** The endereco. */
     @NotNull(message = ENTRADA_NULA)
     private Endereco endereco;
-
+    
+    private String dataHora;
 
     /**
      * Gets the cnpj.
@@ -110,7 +111,11 @@ public class Empresa {
     public Endereco getEndereco() {
         return endereco;
     }
-
+    
+    public String getDataHora() {
+        return dataHora;
+    }
+    
     /**
      * Sets the cnpj.
      *
@@ -163,6 +168,10 @@ public class Empresa {
      */
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+    
+    public void setDataHora(String tempo) {
+        this.dataHora = tempo;
     }
 
     @Override
