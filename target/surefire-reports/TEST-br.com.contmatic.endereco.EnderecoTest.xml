@@ -1,170 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="33" failures="0"
-	name="br.com.contmatic.endereco.EnderecoTest" time="0.675" errors="0"
-	skipped="0">
-	<properties>
-		<property name="java.runtime.name"
-			value="Java(TM) SE Runtime Environment" />
-		<property name="sun.boot.library.path"
-			value="C:\Program Files\Java\jdk1.8.0_211\jre\bin" />
-		<property name="java.vm.version" value="25.211-b12" />
-		<property name="java.vm.vendor" value="Oracle Corporation" />
-		<property name="maven.multiModuleProjectDirectory"
-			value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\Etapa 3" />
-		<property name="java.vendor.url"
-			value="http://java.oracle.com/" />
-		<property name="path.separator" value=";" />
-		<property name="guice.disable.misplaced.annotation.check"
-			value="true" />
-		<property name="java.vm.name"
-			value="Java HotSpot(TM) 64-Bit Server VM" />
-		<property name="file.encoding.pkg" value="sun.io" />
-		<property name="user.script" value="" />
-		<property name="user.country" value="BR" />
-		<property name="sun.java.launcher" value="SUN_STANDARD" />
-		<property name="sun.os.patch.level" value="" />
-		<property name="java.vm.specification.name"
-			value="Java Virtual Machine Specification" />
-		<property name="user.dir"
-			value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\Etapa 3" />
-		<property name="java.runtime.version" value="1.8.0_211-b12" />
-		<property name="java.awt.graphicsenv"
-			value="sun.awt.Win32GraphicsEnvironment" />
-		<property name="java.endorsed.dirs"
-			value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\endorsed" />
-		<property name="os.arch" value="amd64" />
-		<property name="java.io.tmpdir"
-			value="C:\Users\LUCAS~1.RIB\AppData\Local\Temp\" />
-		<property name="line.separator" value="
-" />
-		<property name="java.vm.specification.vendor"
-			value="Oracle Corporation" />
-		<property name="user.variant" value="" />
-		<property name="os.name" value="Windows 10" />
-		<property name="classworlds.conf"
-			value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5468625899847084158.tmp" />
-		<property name="jansi.force" value="true" />
-		<property name="sun.jnu.encoding" value="Cp1252" />
-		<property name="java.library.path"
-			value="C:\Program Files\Java\jdk1.8.0_211\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_241/bin/server;C:/Program Files/Java/jre1.8.0_241/bin;C:/Program Files/Java/jre1.8.0_241/lib/amd64;C:\Python27\;C:\Python27\Scripts;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\adb;C:\ProgramData\chocolatey\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs:\Program Files\TortoiseSVN\bin #export INNO_SETUP=C:\Program Files (x86)\Inno Setup 6 #export JDK7=C:\Program Files\Java\jdk1.7.0_51x32 #export JDK8=C:\Program Files\Java\jdk1.8.0_221 #export JAVA_HOME=%JDK8% #export MAVEN_HOME=C:\apache-maven-3.6.1 #export PATH=C:\Program Files\Java\jdk1.8.0_211\bin;%MAVEN_HOME%\bin;%INNO_SETUP%;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\android-sdk-windows\tools;C:\Users\lucas.ribeiro\AppData\Local\Android\Sdk;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\adb;C:\ProgramData\chocolatey\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs:\Program Files\TortoiseSVN\bin #export INNO_SETUP=C:\Program Files (x86)\Inno Setup 6 #export JDK7=C:\Program Files\Java\jdk1.7.0_51x32 #export JDK8=C:\Program Files\Java\jdk1.8.0_221 #export JAVA_HOME=C:\Program Files\Java\jdk1.8.0_191 #export MAVEN_HOME=C:\apache-maven-3.6.1 #export PATH=C:\Program Files\Java\jdk1.8.0_191\bin;C:\apache-maven-3.6.3\bin;C:\Inno Setup 6;C:\Program Files\TortoiseSVN\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\lucas.ribeiro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas.ribeiro\AppData\Local\GitHubDesktop\bin;C:\Program Files\MongoDB\Server\3.6\bin;\bin;\bin;C:\Inno Setup 6;C:\Users\lucas.ribeiro\AppData\Local\Yarn\bin;C:\Users\lucas.ribeiro\AppData\Roaming\npm;C:\android-sdk-windows\tools;C:\Users\lucas.ribeiro\AppData\Local\Android\Sdk;C:\Users\lucas.ribeiro\Documents\sts-4.5.1.RELEASE;;." />
-		<property name="jansi.passthrough" value="true" />
-		<property name="java.specification.name"
-			value="Java Platform API Specification" />
-		<property name="java.class.version" value="52.0" />
-		<property name="sun.management.compiler"
-			value="HotSpot 64-Bit Tiered Compilers" />
-		<property name="os.version" value="10.0" />
-		<property name="user.home" value="C:\Users\lucas.ribeiro" />
-		<property name="user.timezone" value="GMT-03:00" />
-		<property name="java.awt.printerjob"
-			value="sun.awt.windows.WPrinterJob" />
-		<property name="java.specification.version" value="1.8" />
-		<property name="file.encoding" value="UTF-8" />
-		<property name="user.name" value="lucas.ribeiro" />
-		<property name="java.class.path"
-			value="C:\apache-maven-3.6.3\boot\plexus-classworlds-2.6.0.jar" />
-		<property name="java.vm.specification.version" value="1.8" />
-		<property name="sun.arch.data.model" value="64" />
-		<property name="java.home"
-			value="C:\Program Files\Java\jdk1.8.0_211\jre" />
-		<property name="sun.java.command"
-			value="org.codehaus.plexus.classworlds.launcher.Launcher -B install -Dstyle.color=always" />
-		<property name="java.specification.vendor"
-			value="Oracle Corporation" />
-		<property name="user.language" value="pt" />
-		<property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
-		<property name="java.vm.info" value="mixed mode" />
-		<property name="java.version" value="1.8.0_211" />
-		<property name="java.ext.dirs"
-			value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
-		<property name="sun.boot.class.path"
-			value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_211\jre\classes" />
-		<property name="java.vendor" value="Oracle Corporation" />
-		<property name="maven.home" value="C:\apache-maven-3.6.3" />
-		<property name="style.color" value="always" />
-		<property name="file.separator" value="\" />
-		<property name="java.vendor.url.bug"
-			value="http://bugreport.sun.com/bugreport/" />
-		<property name="sun.cpu.endian" value="little" />
-		<property name="sun.io.unicode.encoding"
-			value="UnicodeLittle" />
-		<property name="sun.desktop" value="windows" />
-		<property name="sun.cpu.isalist" value="amd64" />
-	</properties>
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_saida_tipo" time="0.015" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_bairro_simulando_entrada_de_dados_do_usuario"
-		time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_bairro_nulo" time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_setar_cep_simulando_entrada_de_dados_do_usuario"
-		time="0.021" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_tipo_nulo" time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_rua_gerada_aleatoriamente_com_os_objetos_fake"
-		time="0.025" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_cep_incompleto" time="0.026" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_regiao_gerado_com_objetos_fake" time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_rua_numerica" time="0.023" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_setar_numero_simulando_entrada_de_dados_do_usuario"
-		time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_saida_bairro" time="0.017" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_numero_gerado_aleatoriamente_com_objetos_fake"
-		time="0.025" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_saida_numero" time="0.018" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_saida_regiao" time="0.018" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_regiao_simulando_entrada_de_dados_usuario"
-		time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_cep_vazio" time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_bairro_gerado_com_objetos_fake" time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_cep_nulo" time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_tipo_gerado_sorteado_com_objetos_fake"
-		time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_rua_vazia" time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_tipo_setado_diretamente_simulando_entrada_de_dados_do_usuario"
-		time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_comparar_as_classes_com_equals" time="0.033" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_numero_maior_que_um" time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_regiao_numerico" time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_cep_com_letras" time="0.018" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_saida_cep" time="0.016" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_saida_rua" time="0.017" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_comparar_as_classes_com_hashcode" time="0.034" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_rua_simulando_entrada_de_dados_do_usuario"
-		time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_armazenar_cep_gerado_automaricamente_com_objetos_fake"
-		time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_rua_nula" time="0.02" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_regiao_nulo" time="0.019" />
-	<testcase classname="br.com.contmatic.endereco.EnderecoTest"
-		name="deve_verificar_regiao_vazio" time="0.019" />
+<testsuite tests="33" failures="0" name="br.com.contmatic.endereco.EnderecoTest" time="0.675" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_211\jre\bin"/>
+    <property name="java.vm.version" value="25.211-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\Etapa 3"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\Etapa 3"/>
+    <property name="java.runtime.version" value="1.8.0_211-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\LUCAS~1.RIB\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\lucas.ribeiro\Documents\workspace-spring-tool-suite-4-4.5.0.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5468625899847084158.tmp"/>
+    <property name="jansi.force" value="true"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_211\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_241/bin/server;C:/Program Files/Java/jre1.8.0_241/bin;C:/Program Files/Java/jre1.8.0_241/lib/amd64;C:\Python27\;C:\Python27\Scripts;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\adb;C:\ProgramData\chocolatey\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs:\Program Files\TortoiseSVN\bin #export INNO_SETUP=C:\Program Files (x86)\Inno Setup 6 #export JDK7=C:\Program Files\Java\jdk1.7.0_51x32 #export JDK8=C:\Program Files\Java\jdk1.8.0_221 #export JAVA_HOME=%JDK8% #export MAVEN_HOME=C:\apache-maven-3.6.1 #export PATH=C:\Program Files\Java\jdk1.8.0_211\bin;%MAVEN_HOME%\bin;%INNO_SETUP%;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\android-sdk-windows\tools;C:\Users\lucas.ribeiro\AppData\Local\Android\Sdk;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\adb;C:\ProgramData\chocolatey\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs:\Program Files\TortoiseSVN\bin #export INNO_SETUP=C:\Program Files (x86)\Inno Setup 6 #export JDK7=C:\Program Files\Java\jdk1.7.0_51x32 #export JDK8=C:\Program Files\Java\jdk1.8.0_221 #export JAVA_HOME=C:\Program Files\Java\jdk1.8.0_191 #export MAVEN_HOME=C:\apache-maven-3.6.1 #export PATH=C:\Program Files\Java\jdk1.8.0_191\bin;C:\apache-maven-3.6.3\bin;C:\Inno Setup 6;C:\Program Files\TortoiseSVN\bin;C:\Users\lucas.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\lucas.ribeiro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas.ribeiro\AppData\Local\GitHubDesktop\bin;C:\Program Files\MongoDB\Server\3.6\bin;\bin;\bin;C:\Inno Setup 6;C:\Users\lucas.ribeiro\AppData\Local\Yarn\bin;C:\Users\lucas.ribeiro\AppData\Roaming\npm;C:\android-sdk-windows\tools;C:\Users\lucas.ribeiro\AppData\Local\Android\Sdk;C:\Users\lucas.ribeiro\Documents\sts-4.5.1.RELEASE;;."/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\lucas.ribeiro"/>
+    <property name="user.timezone" value="GMT-03:00"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="lucas.ribeiro"/>
+    <property name="java.class.path" value="C:\apache-maven-3.6.3\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_211\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install -Dstyle.color=always"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="pt"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_211"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_211\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_211\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\apache-maven-3.6.3"/>
+    <property name="style.color" value="always"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_saida_tipo" time="0.015"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_bairro_simulando_entrada_de_dados_do_usuario" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_bairro_nulo" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_setar_cep_simulando_entrada_de_dados_do_usuario" time="0.021"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_tipo_nulo" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_rua_gerada_aleatoriamente_com_os_objetos_fake" time="0.025"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_incompleto" time="0.026"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_regiao_gerado_com_objetos_fake" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_rua_numerica" time="0.023"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_setar_numero_simulando_entrada_de_dados_do_usuario" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_saida_bairro" time="0.017"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_numero_gerado_aleatoriamente_com_objetos_fake" time="0.025"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_saida_numero" time="0.018"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_saida_regiao" time="0.018"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_simulando_entrada_de_dados_usuario" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_vazio" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_bairro_gerado_com_objetos_fake" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_nulo" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_tipo_gerado_sorteado_com_objetos_fake" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_rua_vazia" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_tipo_setado_diretamente_simulando_entrada_de_dados_do_usuario" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_comparar_as_classes_com_equals" time="0.033"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_numero_maior_que_um" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_numerico" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_cep_com_letras" time="0.018"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_saida_cep" time="0.016"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_saida_rua" time="0.017"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_comparar_as_classes_com_hashcode" time="0.034"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_rua_simulando_entrada_de_dados_do_usuario" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_armazenar_cep_gerado_automaricamente_com_objetos_fake" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_rua_nula" time="0.02"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_nulo" time="0.019"/>
+  <testcase classname="br.com.contmatic.endereco.EnderecoTest" name="deve_verificar_regiao_vazio" time="0.019"/>
 </testsuite>

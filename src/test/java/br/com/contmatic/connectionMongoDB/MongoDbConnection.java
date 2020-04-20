@@ -121,7 +121,7 @@ public class MongoDbConnection {
     
     public static Empresa FindDocumentInEmpresa() {
         MongoCollection<Document> empresaCollection = database.getCollection("Empresa");
-        Bson filter = new Document("_id", "50811632279234");
+        Bson filter = new Document("_id", "56063119978303");
         FindIterable<Document> search = empresaCollection.find(filter);
         empresa.setCnpj(search.first().getString("cnpj"));
         empresa.setNome(search.first().getString("nome"));

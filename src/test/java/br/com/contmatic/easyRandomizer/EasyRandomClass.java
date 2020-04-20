@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.Random;
 
 import org.jeasy.random.EasyRandom;
-import org.joda.time.DateTime;
 
 import com.github.javafaker.Faker;
 
@@ -44,7 +43,6 @@ public class EasyRandomClass {
         empresa.setProprietarios(faker.funnyName().name());
         empresa.setTelefones(TelefoneRandomizer());
         empresa.setEndereco( EnderecoRandomizer());
-        empresa.setDataHora(CapturaTempo());
         return empresa;
     }
 
@@ -61,10 +59,6 @@ public class EasyRandomClass {
         telefone.setRamal(faker.regexify(ConstanteRegex.RAMAL));
         telefone.setTipo((EnumTipoTelefone.values()[Double.valueOf(Math.random() * EnumTipoTelefone.values().length).intValue()]).getTipo());
         return telefone;
-    }
-    
-    public String CapturaTempo() {
-        return DateTime.now().toString("dd/MM/yyyy HH:mm");
     }
 
     public Endereco EnderecoRandomizer() {
