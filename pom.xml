@@ -5,6 +5,7 @@
 	<groupId>.br.com.contmatic</groupId>
 	<artifactId>empresa-prova3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>Etapa3</name>
 	<url>http://maven.apache.org</url>
 	<properties>
