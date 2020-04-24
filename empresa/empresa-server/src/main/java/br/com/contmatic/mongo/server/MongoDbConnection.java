@@ -23,8 +23,6 @@ public class MongoDbConnection {
 
     private static final Logger LOGGER = LoggerFactory.getLogger("MongoDbConnection");
 
-    private static Empresa empresa = EasyRandomClass.InstanciaEasyRandomClass().EmpresaRandomizer();
-
     private static Faker faker = new Faker();
 
     private static final String HOST = "localhost"; // endereço ip do banco de dados, no nosso caso local
@@ -37,8 +35,14 @@ public class MongoDbConnection {
 
     private static MongoDatabase getMongoDatabase() {
         try {
-            StartServer.Start("mongod");
-        } catch (IOException e) {
+            StartServer.Start("mongod --dbpath C:\\data");
+            if (database == null) {
+                mongoClient.getDatabase("Empresa");
+                database.createCollection("Empresa");
+                database.createCollection("Funcionario");
+                database.createCollection("Cadastro");
+            }
+        } catch (IOException | NullPointerException e) {
             LOGGER.info(e.getMessage());
         }
         mongoClient = new MongoClient(HOST);
@@ -128,7 +132,9 @@ public class MongoDbConnection {
 
     public static Empresa FindDocumentInEmpresa() {
         MongoCollection<Document> empresaCollection = database.getCollection("Empresa");
-        Bson filter = new Document("_id", "11835378922181");
+        Empresa empresa = EasyRandomClass.InstanciaEasyRandomClass().EmpresaRandomizer();
+        empresaCollection.insertOne(Document.parse(empresa.toString()).append("_id", empresa.getCnpj()));
+        Bson filter = new Document("_id", empresa.getCnpj());
         FindIterable<Document> search = empresaCollection.find(filter);
         empresa.setCnpj(search.first().getString("cnpj"));
         empresa.setNome(search.first().getString("nome"));

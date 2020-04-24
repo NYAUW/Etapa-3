@@ -11,7 +11,7 @@ public class StartServer {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(StartServer.class);
 
-    public static int Start(final String comando) throws IOException {
+    public static String Start(final String comando) throws IOException {
         Process p = Runtime.getRuntime().exec(comando);
         BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
@@ -21,6 +21,6 @@ public class StartServer {
         }
         input.lines(); 
         input.close();
-        return p.exitValue();
+        return "SERVIDOR INICIADO COM SUCESSO!";
     }
 }

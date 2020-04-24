@@ -3,6 +3,8 @@
 	<name>empresa-model</name>
 	<comment></comment>
 	<projects>
+		<project>empresa</project>
+		<project>empresa-server</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
