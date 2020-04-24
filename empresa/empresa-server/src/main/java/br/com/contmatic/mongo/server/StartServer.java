@@ -11,7 +11,7 @@ public class StartServer {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(StartServer.class);
 
-    public static String Start(final String comando) throws IOException {
+    public static String start(final String comando) throws IOException {
         Process p = Runtime.getRuntime().exec(comando);
         BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 

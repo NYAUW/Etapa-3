@@ -7,9 +7,9 @@
 		<artifactId>empresa</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>br.com.contmatic.empresa.test</groupId>
-	<artifactId>empresa-test</artifactId>
-	<name>empresa-test</name>
+	<groupId>br.com.contmatic.empresa.service</groupId>
+	<artifactId>empresa-service</artifactId>
+	<name>empresa-service</name>
 	<dependencies>
 		<dependency>
 			<groupId>javax.validation</groupId>

@@ -1,7 +1,5 @@
 package br.com.contmatic.object.easy;
 
-import static org.apache.commons.lang3.StringUtils.EMPTY;
-
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Random;
@@ -22,30 +20,50 @@ import br.com.contmatic.enums.EnumTipoTelefone;
 import br.com.contmatic.telefone.Telefone;
 
 public class EasyRandomClass {
+    
+    private static EasyRandomClass easyRandom = new EasyRandomClass();
+    
+    private static final Integer ZERO = 0;
+    
+    private static final Integer UM = 1;
+    
+    private static final Integer OITO = 8;
+    
+    private static final Integer TRES = 3;
+    
+    private static final Integer DOIS = 2;
+    
+    private static final Integer NOVE = 9;
+    
+    private static final Integer DEZ = 10;
+    
+    private static final Integer ONZE = 11;
+    
+    private static final Integer QUATORZE = 14;
+    
+    private static Random random = new Random(); 
 
-    public static EasyRandom easy = new EasyRandom();
-
-    public Cadastro CadastroRandomizer() {
+    public Cadastro cadastroRandomizer() {
         Faker faker = new Faker();
         EasyRandom easyFakeObject = new EasyRandom();
         Cadastro cadastro = easyFakeObject.nextObject(Cadastro.class);
         cadastro.setNome(faker.name().fullName());
-        cadastro.setCpf(GeraCpf());
-        cadastro.setEmail(faker.funnyName().name().replace(" ", "").replace("'", "") + DominioEmail());
+        cadastro.setCpf(geraCpf());
+        cadastro.setEmail(faker.funnyName().name().replace(" ", "").replace("'", "") + dominioEmail());
         cadastro.setRg(faker.regexify("[0-9]{7}-[0-9]{2}"));
         return cadastro;
     }
 
-    public Empresa EmpresaRandomizer() {
+    public Empresa empresaRandomizer() {
         Faker faker = new Faker();
         EasyRandom easyFakeObject = new EasyRandom();
         Empresa empresa = easyFakeObject.nextObject(Empresa.class);
-        empresa.setCnpj(GeraCnpj());
+        empresa.setCnpj(geraCnpj());
         empresa.setNome(faker.leagueOfLegends().champion());
         empresa.setRazaoSocial(faker.lorem().sentence());
         empresa.setProprietarios(faker.funnyName().name());
-        empresa.setTelefones(TelefoneRandomizer());
-        empresa.setEndereco(EnderecoRandomizer());
+        empresa.setTelefones(telefoneRandomizer());
+        empresa.setEndereco(enderecoRandomizer());
         return empresa;
     }
 
@@ -53,7 +71,7 @@ public class EasyRandomClass {
      * 
      */
 
-    public Telefone TelefoneRandomizer() {
+    public Telefone telefoneRandomizer() {
         Faker faker = new Faker();
         EasyRandom easyRandomObject = new EasyRandom();
         Telefone telefone = easyRandomObject.nextObject(Telefone.class);
@@ -64,7 +82,7 @@ public class EasyRandomClass {
         return telefone;
     }
 
-    public Endereco EnderecoRandomizer() {
+    public Endereco enderecoRandomizer() {
         Faker faker = new Faker();
         EasyRandom easyRandomObject = new EasyRandom();
         Endereco endereco = easyRandomObject.nextObject(Endereco.class);
@@ -76,7 +94,7 @@ public class EasyRandomClass {
         return endereco;
     }
 
-    public Funcionario FuncionarioRandomizer() {
+    public Funcionario funcionarioRandomizer() {
         Faker fakeObject = new Faker();
         EasyRandom easyFakeObject = new EasyRandom();
         Funcionario funcionario = easyFakeObject.nextObject(Funcionario.class);
@@ -87,24 +105,22 @@ public class EasyRandomClass {
         return funcionario;
     }
 
-    private String GeraCnpj() {
-        String iniciais = EMPTY;
+    private static String geraCnpj() {
+        StringBuilder iniciais = new StringBuilder();
         Integer numero;
-        for(int i = 0 ; i < 14 ; i++) {
-            numero = new Integer((int) (Math.random() * 10));
-            iniciais += numero.toString();
+        for(int i = 0 ; i < QUATORZE; i++) {
+            numero = random.nextInt() * DEZ;
+            iniciais.append(numero.toString());
         }
-        return iniciais;
+        return iniciais.toString();
     }
 
-    public static EasyRandomClass InstanciaEasyRandomClass() {
-        EasyRandomClass easyRandom = new EasyRandomClass();
+    public static EasyRandomClass instanciaEasyRandomClass() {
         return easyRandom;
     }
 
-    private String DominioEmail() {
-        Random random = new Random();
-        Integer numero = random.nextInt(3);
+    private static String dominioEmail() {
+        Integer numero = random.nextInt(TRES);
         String dominio = null;
         switch (numero) {
             case 0:
@@ -116,43 +132,50 @@ public class EasyRandomClass {
             case 2:
                 dominio = "yahoo";
                 break;
+            default:
+                dominio = "contmatic";
+            break;
         }
         return "@" + dominio + ".com.br";
     }
     
-    public static String GeraCpf() {
-        Random random = new Random();
-        int numeros[] = new int[9];
-        for(int i = 0 ; i < numeros.length ; i++) {
-            numeros[i] = random.nextInt(9);
+    public static String geraCpf() {
+        int[] numeros = new int[NOVE];
+        for(int i = ZERO ; i < numeros.length ; i++) {
+            numeros[i] = random.nextInt(NOVE);
         }
-        int calculoDigito1 = (((numeros[0] * 10) + (numeros[1] * 9) + (numeros[2] * 8) + (numeros[3] * 7) + (numeros[4] * 6) + (numeros[5] * 5) + (numeros[6] * 4) + (numeros[7] * 3) +
-            (numeros[8] * 2)));
-        int divisaoDigito1 = calculoDigito1 / 11;
-        int multiplicacaoDigito1 = 11 * divisaoDigito1;
-        int subtracaoDigito1 = calculoDigito1 - multiplicacaoDigito1;
-        int Digito1 = 11 - subtracaoDigito1;
-        String aux = Integer.toString(Digito1);
-
-        if (Digito1 >= 11) {
-            Digito1 += -Digito1;
-        } else if (aux.length() >= 2) {
-            Digito1 += -10;
+        int primeiroDigito = ZERO;
+        for(int i = ZERO; i < OITO; i++) {
+            primeiroDigito = numeros[i] * DEZ - i;
         }
-        int calculoDigito2 = (((numeros[0] * 11) + (numeros[1] * 10) + (numeros[2] * 9) + (numeros[3] * 8) + (numeros[4] * 7) + (numeros[5] * 6) + (numeros[6] * 5) + (numeros[7] * 4) +
-            (numeros[8] * 3) + (Digito1 * 2)));
-        int divisaoDigito2 = calculoDigito2 / 11;
-        int multiplicacaoDigito2 = 11 * divisaoDigito2;
-        int subtracaoDigito2 = calculoDigito2 - multiplicacaoDigito2;
-        int Digito2 = 11 - subtracaoDigito2;
-        String aux2 = Integer.toString(Digito2);
+        int divisaoPrimeiro = primeiroDigito / ONZE;
+        int multiplicacaoPrimeiro = ONZE * divisaoPrimeiro;
+        int subtracaoPrimeiro = primeiroDigito - multiplicacaoPrimeiro;
+        int primeiro = ONZE - subtracaoPrimeiro;
+        String aux = Integer.toString(primeiro);
 
-        if (Digito2 >= 11) {
-            Digito2 += -Digito2;
-        } else if (aux2.length() >= 2) {
-            Digito2 += -10;
+        if (primeiro >= ONZE) {
+            primeiro += -primeiro;
+        } else if (aux.length() >= DOIS) {
+            primeiro += - DEZ;
+        }
+        int segundoDigito = ZERO;
+        for(int i = ZERO; i < OITO; i++) {
+            segundoDigito = numeros[i] * ONZE - UM;
+        }
+        segundoDigito += primeiro * DOIS;
+        int divisaoSegundo = segundoDigito / ONZE;
+        int multiplicacaoSegundo = ONZE * divisaoSegundo;
+        int subtracaoSegundo = segundoDigito - multiplicacaoSegundo;
+        int segundo = ONZE - subtracaoSegundo;
+        String aux2 = Integer.toString(segundo);
+
+        if (segundo >= ONZE) {
+            segundo += -segundo;
+        } else if (aux2.length() >= DOIS) {
+            segundo += - DEZ;
         }
 
-        return Arrays.toString(numeros).replace("[", "").replace(",", "").replace("]", "").replace(" ", "") + Digito1 + Digito2;
+        return Arrays.toString(numeros).replace("[", "").replace(",", "").replace("]", "").replace(" ", "") + primeiro + segundo;
     }
 }
