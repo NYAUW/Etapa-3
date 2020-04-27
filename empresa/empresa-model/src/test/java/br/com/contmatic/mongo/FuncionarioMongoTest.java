@@ -9,7 +9,10 @@ import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
 import br.com.contmatic.empresa.Funcionario;
-import br.com.contmatic.mongo.repository.MongoRepository;
+import br.com.contmatic.mongo.repository.MongoRepositoryReturn;
+import br.com.contmatic.mongo.repository.MongoRepositorySent;
+import br.com.contmatic.mongo.repository.MongoRepositoryUpdate;
+import br.com.contmatic.mongo.repository.MongoRepositoryDelete;
 import br.com.contmatic.mongo.repository.MongoRepositoryFind;
 import br.com.contmatic.object.easy.EasyRandomClass;
 
@@ -128,19 +131,19 @@ public class FuncionarioMongoTest {
     @AfterClass
     public static void envia_para_banco_de_dados() {
         Funcionario funcionario = randomObject.funcionarioRandomizer();
-        MongoRepository.sentoToDatabaseFuncionario(funcionario);
+        MongoRepositorySent.sentoToDatabaseFuncionario(funcionario);
     }
 
     @AfterClass
     public static void deve_enviar_e_deletar_banco_de_dados() {
         Funcionario funcionario = randomObject.funcionarioRandomizer();
-        MongoRepository.deleteDocumentInFuncionario(funcionario);
+        MongoRepositoryDelete.deleteDocumentInFuncionario(funcionario);
     }
 
     @AfterClass
     public static void deve_enviar_e_atualizar_banco_de_dados() {
         Funcionario funcionario = randomObject.funcionarioRandomizer();
-        MongoRepository.updateDocumentInFuncionario(funcionario);
+        MongoRepositoryUpdate.updateDocumentInFuncionario(funcionario);
     }
 
     @AfterClass
@@ -150,6 +153,6 @@ public class FuncionarioMongoTest {
 
     @AfterClass
     public static void deve_retornar_todos_documentos_cadastro_em_json() {
-        MongoRepository.returnDocumentsInFuncionarioCollection();
+        MongoRepositoryReturn.returnDocumentsInFuncionarioCollection();
     }
 }

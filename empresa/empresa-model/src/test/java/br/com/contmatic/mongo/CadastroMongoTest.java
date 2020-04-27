@@ -8,8 +8,11 @@ import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
 import br.com.contmatic.cliente.Cadastro;
-import br.com.contmatic.mongo.repository.MongoRepository;
+import br.com.contmatic.mongo.repository.MongoRepositoryReturn;
+import br.com.contmatic.mongo.repository.MongoRepositorySent;
+import br.com.contmatic.mongo.repository.MongoRepositoryDelete;
 import br.com.contmatic.mongo.repository.MongoRepositoryFind;
+import br.com.contmatic.mongo.repository.MongoRepositoryUpdate;
 import br.com.contmatic.object.easy.EasyRandomClass;
 
 public class CadastroMongoTest {
@@ -135,30 +138,30 @@ public class CadastroMongoTest {
     @AfterClass
     public static void envia_para_banco_de_dados() {
         Cadastro cadastro = randomObject.cadastroRandomizer();
-        MongoRepository.sentToDatabaseCadastro(cadastro);
+        MongoRepositorySent.sentToDatabaseCadastro(cadastro);
     }
 
     @AfterClass
     public static void deve_enviar_e_deletar_do_banco_de_dados() {
         Cadastro cadastro = randomObject.cadastroRandomizer();
-        MongoRepository.deleteDocumentInCadastro(cadastro);
+        MongoRepositoryDelete.deleteDocumentInCadastro(cadastro);
     }
 
     @AfterClass
     public static void deve_enviar_e_atualizar_cadastro_banco_de_dados() {
         Cadastro cadastro = randomObject.cadastroRandomizer();
-        MongoRepository.updateDocumentInCadastro(cadastro);
+        MongoRepositoryUpdate.updateDocumentInCadastro(cadastro);
     }
 
     @AfterClass
     public static void deve_encontrar_documento_aleatorio_cadastro() {
         Cadastro cadastro = randomObject.cadastroRandomizer();
-        MongoRepository.deleteDocumentInCadastro(cadastro);
+        MongoRepositoryDelete.deleteDocumentInCadastro(cadastro);
         ;
     }
 
     @AfterClass
     public static void deve_retornar_todos_documentos_cadastro_em_json() {
-        MongoRepository.returnDocumentsInCadastroCollection();
+        MongoRepositoryReturn.returnDocumentsInCadastroCollection();
     }
 }

@@ -9,7 +9,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
-import br.com.contmatic.endereco.Endereco;
 import br.com.contmatic.object.easy.EasyRandomClass;
 
 /**
@@ -424,17 +423,6 @@ public class EmpresaTest {
     @Test
     public void deve_verificar_endereco_gerados_com_objetos_fake() {
         Empresa empresa = randomObject.empresaRandomizer();
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(empresa.getEndereco()));
-    }
-
-    /**
-     * Deve setar endereco simulando entrada de dados com objetos fake.
-     */
-    @Test
-    public void deve_setar_endereco_simulando_entrada_de_dados_com_objetos_fake() {
-        Empresa empresa = randomObject.empresaRandomizer();
-        Endereco endereco = randomObject.enderecoRandomizer();
-        empresa.setEndereco(endereco);
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(empresa.getEndereco()));
     }
 

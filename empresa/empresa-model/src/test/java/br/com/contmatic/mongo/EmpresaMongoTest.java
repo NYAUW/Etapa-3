@@ -8,8 +8,11 @@ import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
 import br.com.contmatic.empresa.Empresa;
-import br.com.contmatic.mongo.repository.MongoRepository;
+import br.com.contmatic.mongo.repository.MongoRepositoryDelete;
 import br.com.contmatic.mongo.repository.MongoRepositoryFind;
+import br.com.contmatic.mongo.repository.MongoRepositoryReturn;
+import br.com.contmatic.mongo.repository.MongoRepositorySent;
+import br.com.contmatic.mongo.repository.MongoRepositoryUpdate;
 import br.com.contmatic.object.easy.EasyRandomClass;
 
 public class EmpresaMongoTest {
@@ -81,23 +84,23 @@ public class EmpresaMongoTest {
     @AfterClass
     public static void deve_enviar_para_base_de_dados() {
         Empresa empresa = randomObject.empresaRandomizer();
-        MongoRepository.sentToDatabaseEmpresa(empresa);
+        MongoRepositorySent.sentToDatabaseEmpresa(empresa);
     }
 
     @AfterClass
     public static void deve_enviar_e_deletar_documento_da_collection() {
         Empresa empresa = randomObject.empresaRandomizer();
-        MongoRepository.deleteDocumentInEmpresa(empresa);
+        MongoRepositoryDelete.deleteDocumentInEmpresa(empresa);
     }
 
     @AfterClass
     public static void deve_atualizar_nome_empresa_banco_de_dados() {
         Empresa empresa = randomObject.empresaRandomizer();
-        MongoRepository.updateDocumentInEmpresa(empresa);
+        MongoRepositoryUpdate.updateDocumentInEmpresa(empresa);
     }
 
     @AfterClass
     public static void deve_retornar_todos_documentos_empresa() {
-        MongoRepository.returnDocumentsInEmpresaCollection();
+        MongoRepositoryReturn.returnDocumentsInEmpresaCollection();
     }
 }

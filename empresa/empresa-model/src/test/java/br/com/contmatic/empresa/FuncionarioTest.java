@@ -243,7 +243,7 @@ public class FuncionarioTest {
     public void deve_armazenar_codigo_simulado_com_entrada_de_dados() {
         Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCodigo(234);
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCodigo()));
     }
 
     @Test

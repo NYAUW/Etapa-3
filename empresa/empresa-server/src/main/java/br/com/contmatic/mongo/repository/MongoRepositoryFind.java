@@ -18,7 +18,7 @@ import br.com.contmatic.object.easy.EasyRandomClass;
 
 public class MongoRepositoryFind {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger("MongoDbConnection");
+    private static final Logger LOGGER = LoggerFactory.getLogger(MongoRepositoryFind.class);
 
     private static EasyRandomClass randomObject = EasyRandomClass.instanciaEasyRandomClass();
 
@@ -28,11 +28,7 @@ public class MongoRepositoryFind {
 
     private static final String FUNCIONARIO = "Funcionario";
 
-    private static MongoDatabase database = MongoRepositoryFind.getMongoDatabase();
-
-    private static MongoDatabase getMongoDatabase() {
-        return MongoRepository.getMongoDatabase();
-    }
+    private static MongoDatabase database = MongoRepositoryReturn.getMongoDatabaseServer();
 
     public static Empresa findDocumentInEmpresa() {
         MongoCollection<Document> empresaCollection = database.getCollection(EMPRESA);
