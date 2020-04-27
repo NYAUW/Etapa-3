@@ -7,11 +7,9 @@ import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 
-import org.junit.AfterClass;
 import org.junit.Test;
 
 import br.com.contmatic.annotation.ValidateAnnotations;
-import br.com.contmatic.mongo.server.MongoDbConnection;
 import br.com.contmatic.object.easy.EasyRandomClass;
 
 /**
@@ -290,33 +288,5 @@ public class FuncionarioTest {
         funcionario.setSalario(null);
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
-    
-    @AfterClass
-    public static void envia_para_banco_de_dados() {
-        Funcionario funcionario = randomObject.funcionarioRandomizer();
-        MongoDbConnection.sentoToDatabaseFuncionario(funcionario);
-    }
-    
-    @AfterClass
-    public static void deve_enviar_e_deletar_banco_de_dados() {
-        Funcionario funcionario = randomObject.funcionarioRandomizer();
-        MongoDbConnection.deleteDocumentInFuncionario(funcionario);
-    }
-    
-    @AfterClass
-    public static void deve_enviar_e_atualizar_banco_de_dados() {
-        Funcionario funcionario = randomObject.funcionarioRandomizer();
-        MongoDbConnection.updateDocumentInFuncionario(funcionario);
-    }
-    
-    @AfterClass
-    public static void deve_encontrar_documento_aleatorio_funcionario() {
-    	 Funcionario funcionario = randomObject.funcionarioRandomizer();
-         MongoDbConnection.findDocumentInFuncionario(funcionario);
-    }
-    
-    @AfterClass
-    public static void deve_retornar_todos_documentos_cadastro_em_json() {
-    	MongoDbConnection.returnDocumentsInFuncionarioCollection();
-    }
+
 }

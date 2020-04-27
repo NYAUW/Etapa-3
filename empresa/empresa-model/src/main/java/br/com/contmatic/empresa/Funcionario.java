@@ -2,12 +2,14 @@ package br.com.contmatic.empresa;
 
 import static br.com.contmatic.constante.Constante.ENTRADA_INVALIDA;
 import static br.com.contmatic.constante.Constante.ENTRADA_NULA;
+import static br.com.contmatic.constante.Constante.VALOR_MINIMO;
 import static br.com.contmatic.constante.ConstanteRegex.SOMENTE_ALFA;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 import static org.apache.commons.lang3.builder.ToStringStyle.JSON_STYLE;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -18,6 +20,8 @@ import javax.validation.constraints.Pattern;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.hibernate.validator.constraints.Length;
+
+import br.com.contmatic.constante.Constante;
 
 /**
  * The Class Funcionario.
@@ -44,6 +48,7 @@ public class Funcionario {
 
     /** The salario. */
     @NotNull(message = ENTRADA_NULA)
+    @DecimalMax(value = "0100.0", message = VALOR_MINIMO)
     private BigDecimal salario;
 
     /**

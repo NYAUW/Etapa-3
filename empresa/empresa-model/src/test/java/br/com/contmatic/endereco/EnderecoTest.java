@@ -17,42 +17,43 @@ import br.com.contmatic.object.easy.EasyRandomClass;
 public class EnderecoTest {
 
     private static EasyRandomClass randomObject = EasyRandomClass.instanciaEasyRandomClass();
-    
+
     @Test
     public void deve_verificar_saida_rua() {
         Endereco endereco = randomObject.enderecoRandomizer();
         assertTrue(endereco.toString().contains("rua"));
     }
-    
+
     @Test
     public void deve_verificar_saida_bairro() {
         Endereco endereco = randomObject.enderecoRandomizer();
         assertTrue(endereco.toString().contains("bairro"));
     }
-    
+
     @Test
     public void deve_verificar_saida_numero() {
         Endereco endereco = randomObject.enderecoRandomizer();
         assertTrue(endereco.toString().contains("numero"));
     }
-    
+
     @Test
     public void deve_verificar_saida_regiao() {
         Endereco endereco = randomObject.enderecoRandomizer();
         assertTrue(endereco.toString().contains("regiao"));
     }
-    
+
     @Test
     public void deve_verificar_saida_cep() {
         Endereco endereco = randomObject.enderecoRandomizer();
         assertTrue(endereco.toString().contains("cep"));
     }
-    
+
     @Test
     public void deve_verificar_saida_tipo() {
         Endereco endereco = randomObject.enderecoRandomizer();
         assertTrue(endereco.toString().contains("tipo"));
     }
+
     /**
      * Deve comparar as classes com hashcode.
      */
@@ -129,7 +130,7 @@ public class EnderecoTest {
     public void deve_armazenar_bairro_simulando_entrada_de_dados_do_usuario() {
         Endereco endereco = randomObject.enderecoRandomizer();
         endereco.setBairro(SAPOPEMBA.getBairro());
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco.getBairro()));
     }
 
     @Test
@@ -146,7 +147,7 @@ public class EnderecoTest {
     public void deve_setar_numero_simulando_entrada_de_dados_do_usuario() {
         Endereco endereco = randomObject.enderecoRandomizer();
         endereco.setNumero(666);
-        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco));
+        assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco.getNumero()));
     }
 
     @Test
@@ -270,14 +271,14 @@ public class EnderecoTest {
         endereco.setTipo(CASA);
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco.getTipo()));
     }
-    
+
     @Test
     public void deve_armazenar_regiao_com_enum() {
         Endereco endereco = randomObject.enderecoRandomizer();
         endereco.setRegiao(CASA.getTipo());
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(endereco.getTipo()));
     }
-    
+
     @Test
     public void deve_verificar_tipo_nulo() {
         Endereco endereco = randomObject.enderecoRandomizer();

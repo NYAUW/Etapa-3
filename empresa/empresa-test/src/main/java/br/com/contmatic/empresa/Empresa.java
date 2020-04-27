@@ -56,7 +56,6 @@ public class Empresa {
     @NotNull(message = ENTRADA_NULA)
     private Endereco endereco;
 
-
     /**
      * Gets the cnpj.
      *

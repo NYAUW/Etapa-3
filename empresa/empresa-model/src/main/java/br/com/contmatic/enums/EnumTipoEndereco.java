@@ -5,17 +5,17 @@ package br.com.contmatic.enums;
  */
 public enum EnumTipoEndereco {
 
-                          /** The casa. */
-                          CASA("Casa"),
+                              /** The casa. */
+                              CASA("Casa"),
 
-                          /** The apartamento. */
-                          APARTAMENTO("Apartamento"),
+                              /** The apartamento. */
+                              APARTAMENTO("Apartamento"),
 
-                          /** The condominio. */
-                          CONDOMINIO("Condominio"),
+                              /** The condominio. */
+                              CONDOMINIO("Condominio"),
 
-                          /** The empresarial. */
-                          EMPRESARIAL("Empresarial");
+                              /** The empresarial. */
+                              EMPRESARIAL("Empresarial");
 
     /** The tipo. */
     private String tipo;

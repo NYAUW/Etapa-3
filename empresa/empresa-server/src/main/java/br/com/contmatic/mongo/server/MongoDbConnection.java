@@ -1,6 +1,7 @@
 package br.com.contmatic.mongo.server;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -22,6 +23,8 @@ import br.com.contmatic.object.easy.EasyRandomClass;
 public class MongoDbConnection {
 
     private static final Logger LOGGER = LoggerFactory.getLogger("MongoDbConnection");
+    
+    private static EasyRandomClass randomObject = EasyRandomClass.instanciaEasyRandomClass();
 
     private static Faker faker = new Faker();
 
@@ -156,12 +159,18 @@ public class MongoDbConnection {
         LOGGER.info("PROCURA CADASTRO: Documento {} encontrado com sucesso.", search.first());
     }
 
-    public static void findDocumentInFuncionario(Funcionario funcionario) {
+    public static Funcionario findDocumentInFuncionario() {
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         MongoCollection<Document> funcionarioCollection = database.getCollection(FUNCIONARIO);
         funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
         Bson filter = new Document("_id", funcionario.getCodigo());
         FindIterable<Document> search = funcionarioCollection.find(filter);
+        funcionario.setNome(search.first().getString("nome"));
+        funcionario.setCargo(search.first().getString("cargo"));
+        funcionario.setCodigo(search.first().getInteger("codigo"));
+        funcionario.setSalario(new BigDecimal(search.first().getDouble("salario")));
         LOGGER.info("PROCURA FUNCIONARIO: Documento {} encontrado com sucesso.", search.first());
+        return funcionario;
     }
 
     public static void returnDocumentsInEmpresaCollection() {

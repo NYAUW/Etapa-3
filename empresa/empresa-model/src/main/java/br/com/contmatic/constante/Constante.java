@@ -16,6 +16,8 @@ public final class Constante {
 
     /** The Constant ENTRADA_NULA. */
     public static final String ENTRADA_NULA = "A entrada não pode ficar nula";
+    
+    public static final String VALOR_MINIMO = "O valor minimo é 100";
 
     private Constante() {
 

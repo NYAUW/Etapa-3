@@ -6,12 +6,14 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.contmatic.cliente.CadastroTest;
 import br.com.contmatic.endereco.EnderecoTest;
+import br.com.contmatic.mongo.EmpresaMongoTest;
+import br.com.contmatic.mongo.FuncionarioMongoTest;
 import br.com.contmatic.telefone.TelefoneTest;
 
 /**
  * The Class TestAllClass.
  */
 @RunWith(Suite.class)
-@SuiteClasses({ EmpresaTest.class, FuncionarioTest.class, CadastroTest.class, TelefoneTest.class, EnderecoTest.class})
+@SuiteClasses({ EmpresaTest.class, FuncionarioTest.class, CadastroTest.class, TelefoneTest.class, EnderecoTest.class, EmpresaMongoTest.class, FuncionarioMongoTest.class })
 public class TestAllClass {
 }
