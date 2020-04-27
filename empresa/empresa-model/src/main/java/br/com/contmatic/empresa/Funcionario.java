@@ -21,8 +21,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.hibernate.validator.constraints.Length;
 
-import br.com.contmatic.constante.Constante;
-
 /**
  * The Class Funcionario.
  */

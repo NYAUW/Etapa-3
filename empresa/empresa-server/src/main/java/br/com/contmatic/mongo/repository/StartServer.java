@@ -1,4 +1,4 @@
-package br.com.contmatic.mongo.server;
+package br.com.contmatic.mongo.repository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
