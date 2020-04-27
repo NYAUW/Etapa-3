@@ -19,38 +19,38 @@ import br.com.contmatic.object.easy.EasyRandomClass;
  */
 public class FuncionarioTest {
 
-    private static EasyRandomClass randomObject = EasyRandomClass.InstanciaEasyRandomClass();
+    private static EasyRandomClass randomObject = EasyRandomClass.instanciaEasyRandomClass();
 
     /**
      * Verifica classes iguais hashcode.
      */
     @Test
     public void verifica_classes_iguais_hashcode() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertEquals(funcionario.hashCode(), funcionario.hashCode());
     }
 
     @Test
     public void deve_verificar_nome_to_string() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertTrue(funcionario.toString().contains("nome"));
     }
 
     @Test
     public void deve_verificar_cargo_to_string() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertTrue(funcionario.toString().contains("cargo"));
     }
 
     @Test
     public void deve_verificar_codigo_to_string() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertTrue(funcionario.toString().contains("codigo"));
     }
 
     @Test
     public void deve_verificar_salario_to_string() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertTrue(funcionario.toString().contains("salario"));
     }
 
@@ -62,33 +62,33 @@ public class FuncionarioTest {
 
     @Test
     public void deve_verificar_se_a_classe_contem_dados_nulos() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertFalse(funcionario.equals(null));
     }
 
     @Test
     public void deve_comparar_objetos_da_classe() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertFalse(funcionario.equals(new Object()));
     }
 
     @Test
     public void deve_verificar_classes_iguais() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertEquals(funcionario, funcionario);
     }
 
     @Test
     public void deve_verificar_classes_iguais_com_equals() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        Funcionario funcionario2 = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
+        Funcionario funcionario2 = randomObject.funcionarioRandomizer();
         assertNotEquals(funcionario, funcionario2);
     }
 
     @Test
     public void deve_verificar_objeto_das_classes() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        Funcionario funcionario2 = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
+        Funcionario funcionario2 = randomObject.funcionarioRandomizer();
         assertNotEquals(funcionario, funcionario2);
     }
 
@@ -121,49 +121,49 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_verificar_nome_simulando_entrada_de_dados_do_usuario() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome("Marcelao Alves");
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getNome()));
     }
 
     @Test
     public void deve_verificar_nome_incompleto() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome("M");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_nome_com_entrada_numerica() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome("Marcel4o Alves");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_nome_com_entrada_blank() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome("");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_nome_com_entrada_nula() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome(null);
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_nome_com_entrada_especial() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome("$#@&*%$#@");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_nome_com_entrada_somente_numeros() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setNome("39407894065");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
@@ -173,7 +173,7 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_verificar_nome_gerado_com_objetos_fake() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getNome()));
     }
 
@@ -182,7 +182,7 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_verificar_cargo_gerados_com_objetos_fake() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCargo()));
     }
 
@@ -191,49 +191,49 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_verificar_cargo_tecnico_simulando_entrada_de_dados_do_usuario() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo("Tecnico");
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCargo()));
     }
 
     @Test
     public void deve_verificar_cargo_atendente_simulando_entrada_de_dados_do_usuario() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo("Atendente");
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCargo()));
     }
 
     @Test
     public void deve_verificar_cargo_auxiliar_simulando_entrada_de_dados_do_usuario() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo("Auxiliar");
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCargo()));
     }
 
     @Test
     public void deve_verificar_cargo_nuloo() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo(null);
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_cargo_vazio() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo("");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_cargo_numerico() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo("9043879");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_cargo_especiais() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCargo("$#@!");
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
@@ -243,14 +243,14 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_armazenar_codigo_simulado_com_entrada_de_dados() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCodigo(234);
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
 
     @Test
     public void deve_verificar_codigo_0() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setCodigo(0);
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
@@ -260,7 +260,7 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_armazenar_codigo_gerados_aleatoriamente_com_objetos_fake() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getCodigo()));
     }
 
@@ -269,7 +269,7 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_armazenar_salario_gerado_com_objetos_fake() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.getSalario();
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getSalario()));
     }
@@ -279,44 +279,44 @@ public class FuncionarioTest {
      */
     @Test
     public void deve_setar_salario_simulando_entrada_de_dados() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setSalario(new BigDecimal("5000.00"));
         assertFalse(ValidateAnnotations.returnAnnotationMsgError(funcionario.getSalario()));
     }
 
     @Test
     public void deve_setar_salario_nulo() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
         funcionario.setSalario(null);
         assertTrue(ValidateAnnotations.returnAnnotationMsgError(funcionario));
     }
     
     @AfterClass
     public static void envia_para_banco_de_dados() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        MongoDbConnection.SentoToDatabaseFuncionario(funcionario);
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
+        MongoDbConnection.sentoToDatabaseFuncionario(funcionario);
     }
     
     @AfterClass
     public static void deve_enviar_e_deletar_banco_de_dados() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        MongoDbConnection.DeleteDocumentInFuncionario(funcionario);
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
+        MongoDbConnection.deleteDocumentInFuncionario(funcionario);
     }
     
     @AfterClass
     public static void deve_enviar_e_atualizar_banco_de_dados() {
-        Funcionario funcionario = randomObject.FuncionarioRandomizer();
-        MongoDbConnection.UpdateDocumentInFuncionario(funcionario);
+        Funcionario funcionario = randomObject.funcionarioRandomizer();
+        MongoDbConnection.updateDocumentInFuncionario(funcionario);
     }
     
     @AfterClass
     public static void deve_encontrar_documento_aleatorio_funcionario() {
-    	 Funcionario funcionario = randomObject.FuncionarioRandomizer();
-         MongoDbConnection.FindDocumentInFuncionario(funcionario);
+    	 Funcionario funcionario = randomObject.funcionarioRandomizer();
+         MongoDbConnection.findDocumentInFuncionario(funcionario);
     }
     
     @AfterClass
     public static void deve_retornar_todos_documentos_cadastro_em_json() {
-    	MongoDbConnection.ReturnDocumentsInFuncionarioCollection();
+    	MongoDbConnection.returnDocumentsInFuncionarioCollection();
     }
 }

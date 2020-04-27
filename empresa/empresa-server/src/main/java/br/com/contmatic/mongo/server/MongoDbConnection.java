@@ -38,49 +38,49 @@ public class MongoDbConnection {
     private static MongoDatabase database = MongoDbConnection.getMongoDatabase();
 
     private static MongoDatabase getMongoDatabase() {
-        try {
-            StartServer.start("mongod --dbpath C:\\data");
-            if (database == null) {
-                mongoClient.getDatabase(EMPRESA);
-                database.createCollection(EMPRESA);
-                database.createCollection(FUNCIONARIO);
-                database.createCollection(CADASTRO);
+            try {
+                StartServer.start("mongod --dbpath C:\\data");
+            } catch (IOException e) {
+                if (database == null) {
+                    mongoClient.getDatabase(EMPRESA);
+                    database.createCollection(EMPRESA);
+                    database.createCollection(FUNCIONARIO);
+                    database.createCollection(CADASTRO);
+                }
+                LOGGER.info("Erro ao iniciar o servidor: {}", e.getMessage());
             }
-        } catch (IOException | NullPointerException e) {
-            LOGGER.info(e.getMessage());
-        }
         mongoClient = new MongoClient(HOST);
         return mongoClient.getDatabase(EMPRESA);
     }
 
-    public static void SentToDatabaseEmpresa(Empresa empresa) {
+    public static void sentToDatabaseEmpresa(Empresa empresa) {
         MongoCollection<Document> empresaCollection = database.getCollection(EMPRESA);
         empresaCollection.insertOne(Document.parse(empresa.toString()).append("_id", empresa.getCnpj()));
-        LOGGER.info("EMPRESA ENVIA -> Documento nº " + empresa.toString() + " Inserido com sucesso");
+        LOGGER.info("EMPRESA ENVIA -> Documento nº {} Inserido com sucesso", empresa);
     }
 
-    public static void SentoToDatabaseFuncionario(Funcionario funcionario) {
+    public static void sentoToDatabaseFuncionario(Funcionario funcionario) {
         MongoCollection<Document> funcionarioCollection = database.getCollection(FUNCIONARIO);
         funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
-        LOGGER.info("FUNCIONARIO ENVIA-> Documento nº" + funcionario.toString() + "Inserido com sucesso");
+        LOGGER.info("FUNCIONARIO ENVIA-> Documento nº {} Inserido com sucesso", funcionario);
     }
 
-    public static void SentToDatabaseCadastro(Cadastro cadastro) {
+    public static void sentToDatabaseCadastro(Cadastro cadastro) {
         MongoCollection<Document> cadastroCollection = database.getCollection(CADASTRO);
         cadastroCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cadastro.getCpf()));
-        LOGGER.info("CADASTRO ENVIA -> Documento nº" + cadastro.toString() + "Inserido com sucesso");
+        LOGGER.info("CADASTRO ENVIA -> Documento nº {} Inserido com sucesso", cadastro);
     }
 
-    public static void DeleteDocumentInEmpresa(Empresa empresa) {
+    public static void deleteDocumentInEmpresa(Empresa empresa) {
         MongoCollection<Document> empresaCollection = database.getCollection(EMPRESA);
         String cnpj = empresa.getCnpj();
         empresaCollection.insertOne(Document.parse(empresa.toString()).append("_id", cnpj));
-        LOGGER.info("Documento {} inserido com sucesso", empresaCollection.countDocuments());
+        LOGGER.info("Documento {} inserido com sucesso.", empresaCollection.countDocuments());
         empresaCollection.deleteOne(new Document("_id", cnpj));
         LOGGER.info("EMPRESA DELETE -> Documento {} deletado com sucesso", empresaCollection.countDocuments());
     }
 
-    public static void DeleteDocumentInCadastro(Cadastro cadastro) {
+    public static void deleteDocumentInCadastro(Cadastro cadastro) {
         MongoCollection<Document> cadastroCollection = database.getCollection(CADASTRO);
         String cpf = cadastro.getCpf();
         cadastroCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cpf));
@@ -89,7 +89,7 @@ public class MongoDbConnection {
         LOGGER.info("CADASTRO DELETE -> Documento {} deletado com sucesso", cadastroCollection.countDocuments());
     }
 
-    public static void DeleteDocumentInFuncionario(Funcionario funcionario) {
+    public static void deleteDocumentInFuncionario(Funcionario funcionario) {
         MongoCollection<Document> funcionarioCollection = database.getCollection(CADASTRO);
         int cod = funcionario.getCodigo();
         funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", cod));
@@ -98,7 +98,7 @@ public class MongoDbConnection {
         LOGGER.info("FUNCIONARIO DELETE Documento {} deletado com sucesso", funcionarioCollection.countDocuments());
     }
 
-    public static void UpdateDocumentInEmpresa(Empresa empresa) {
+    public static void updateDocumentInEmpresa(Empresa empresa) {
         String oldName = empresa.getNome();
         String newName = faker.leagueOfLegends().champion();
         MongoCollection<Document> empresaCollection = database.getCollection(EMPRESA);
@@ -110,7 +110,7 @@ public class MongoDbConnection {
         LOGGER.info("EMPRESA UPDATE: Entradas atualizadas do documento {} de {} para {} com sucesso", empresaCollection.countDocuments(), oldName, newName);
     }
 
-    public static void UpdateDocumentInCadastro(Cadastro cadastro) {
+    public static void updateDocumentInCadastro(Cadastro cadastro) {
         String oldName = cadastro.getNome();
         String newName = faker.name().fullName();
         MongoCollection<Document> cadastroCollection = database.getCollection(CADASTRO);
@@ -122,7 +122,7 @@ public class MongoDbConnection {
         LOGGER.info("CADASTRO UPDATE: Entradas atualizadas do documento {} de {} para {} com sucesso", cadastroCollection.countDocuments(), oldName, newName);
     }
 
-    public static void UpdateDocumentInFuncionario(Funcionario funcionario) {
+    public static void updateDocumentInFuncionario(Funcionario funcionario) {
         String oldName = funcionario.getNome();
         String newName = faker.name().fullName();
         MongoCollection<Document> funcionarioCollection = database.getCollection(FUNCIONARIO);
@@ -134,7 +134,7 @@ public class MongoDbConnection {
         LOGGER.info("FUNCIONARIO UPDATE: Entradas atualizadas do documento {} de {} para {} com sucesso", funcionarioCollection.countDocuments(), oldName, newName);
     }
 
-    public static Empresa FindDocumentInEmpresa() {
+    public static Empresa findDocumentInEmpresa() {
         MongoCollection<Document> empresaCollection = database.getCollection(EMPRESA);
         Empresa empresa = EasyRandomClass.instanciaEasyRandomClass().empresaRandomizer();
         empresaCollection.insertOne(Document.parse(empresa.toString()).append("_id", empresa.getCnpj()));
@@ -144,27 +144,27 @@ public class MongoDbConnection {
         empresa.setNome(search.first().getString("nome"));
         empresa.setProprietarios(search.first().getString("proprietarios"));
         empresa.setRazaoSocial(search.first().getString("razaoSocial"));
-        LOGGER.info("EMPRESA ENCONTRADA: O documento {} foi encontrado com sucesso", empresa.toString());
+        LOGGER.info("EMPRESA ENCONTRADA: O documento {} foi encontrado com sucesso", empresa);
         return empresa;
     }
 
-    public static void FindDocumentInCadastro(Cadastro cadastro) {
+    public static void findDocumentInCadastro(Cadastro cadastro) {
         MongoCollection<Document> cadastroCollection = database.getCollection(CADASTRO);
         cadastroCollection.insertOne(Document.parse(cadastro.toString()).append("_id", cadastro.getCpf()));
         Bson filter = new Document("_id", cadastro.getCpf());
         FindIterable<Document> search = cadastroCollection.find(filter);
-        LOGGER.info("PROCURA CADASTRO: Documento {} encontrado com sucesso.", search.first().toJson());
+        LOGGER.info("PROCURA CADASTRO: Documento {} encontrado com sucesso.", search.first());
     }
 
-    public static void FindDocumentInFuncionario(Funcionario funcionario) {
+    public static void findDocumentInFuncionario(Funcionario funcionario) {
         MongoCollection<Document> funcionarioCollection = database.getCollection(FUNCIONARIO);
         funcionarioCollection.insertOne(Document.parse(funcionario.toString()).append("_id", funcionario.getCodigo()));
         Bson filter = new Document("_id", funcionario.getCodigo());
         FindIterable<Document> search = funcionarioCollection.find(filter);
-        LOGGER.info("PROCURA FUNCIONARIO: Documento {} encontrado com sucesso.", search.first().toJson());
+        LOGGER.info("PROCURA FUNCIONARIO: Documento {} encontrado com sucesso.", search.first());
     }
 
-    public static void ReturnDocumentsInEmpresaCollection() {
+    public static void returnDocumentsInEmpresaCollection() {
         MongoCollection<Document> empresaCollection = database.getCollection(EMPRESA);
         MongoCursor<Document> cursor = empresaCollection.find().iterator();
         while (cursor.hasNext()) {
@@ -172,7 +172,7 @@ public class MongoDbConnection {
         }
     }
 
-    public static void ReturnDocumentsInCadastroCollection() {
+    public static void returnDocumentsInCadastroCollection() {
         MongoCollection<Document> cadastroCollection = database.getCollection(EMPRESA);
         MongoCursor<Document> cursor = cadastroCollection.find().iterator();
         while (cursor.hasNext()) {
@@ -180,7 +180,7 @@ public class MongoDbConnection {
         }
     }
 
-    public static void ReturnDocumentsInFuncionarioCollection() {
+    public static void returnDocumentsInFuncionarioCollection() {
         MongoCollection<Document> funcionarioCollection = database.getCollection(EMPRESA);
         MongoCursor<Document> cursor = funcionarioCollection.find().iterator();
         while (cursor.hasNext()) {

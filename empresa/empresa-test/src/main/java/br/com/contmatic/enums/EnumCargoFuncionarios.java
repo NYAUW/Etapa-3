@@ -5,7 +5,7 @@ public enum EnumCargoFuncionarios {
     TECNICO("Técnico"),
     AUXILIAR("Auxiliar");
     
-    String cargo;
+    private String cargo;
 
     private EnumCargoFuncionarios(String cargo) {
         this.cargo = cargo;

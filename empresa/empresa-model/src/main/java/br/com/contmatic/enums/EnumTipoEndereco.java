@@ -18,7 +18,7 @@ public enum EnumTipoEndereco {
                           EMPRESARIAL("Empresarial");
 
     /** The tipo. */
-    String tipo;
+    private String tipo;
 
     /**
      * Instantiates a new tipo endereco.
@@ -27,5 +27,9 @@ public enum EnumTipoEndereco {
      */
     private EnumTipoEndereco(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 }

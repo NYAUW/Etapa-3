@@ -11,6 +11,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CNPJ;
 
@@ -165,19 +167,22 @@ public class Empresa {
 
     @Override
     public int hashCode() {
-        return org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode(cnpj);
+        return HashCodeBuilder.reflectionHashCode(cnpj);
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         Empresa other = (Empresa) obj;
-        return new org.apache.commons.lang3.builder.EqualsBuilder().append(cnpj, other.cnpj).isEquals();
+        return new EqualsBuilder().append(cnpj, other.cnpj).isEquals();
     }
 
     @Override

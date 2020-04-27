@@ -12,7 +12,7 @@ public enum EnumTipoTelefone {
                           CELULAR("Celular");
 
     /** The tipo. */
-    String tipo;
+    private String tipo;
 
     /**
      * Instantiates a new tipo telefone.
