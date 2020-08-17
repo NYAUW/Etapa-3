@@ -96,7 +96,7 @@ public class EasyRandomClass {
 						.getBairro());
 		endereco.setCep(faker.regexify("[0-9]{8}"));
 		endereco.setRua(faker.address().streetName());
-		endereco.setRegiao(faker.address().country().replace("(", "").replace(")", ""));
+		endereco.setRegiao(faker.address().streetName());
 		endereco.setNumero(Integer.parseInt(faker.regexify(NUMERO_TELEFONE)));
 		return endereco;
 	}

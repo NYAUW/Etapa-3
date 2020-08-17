@@ -64,6 +64,9 @@ public class Funcionario {
         this.codigo = codigo;
         this.salario = salario;
     }
+    
+    public Funcionario() {
+    }
 
     /**
      * Gets the nome.
