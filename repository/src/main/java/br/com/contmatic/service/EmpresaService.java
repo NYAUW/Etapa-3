@@ -7,6 +7,8 @@ import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bson.conversions.Bson;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
@@ -27,6 +29,8 @@ public class EmpresaService implements IEmpresaRespository {
 
 	private MongoCollection<Empresa> collection;
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmpresaService.class);
+	
 	private MongoDatabase getMongoDatabase() {
 		MongoClient mongoClient = mongoClient();
 		return mongoClient.getDatabase(database).withCodecRegistry(createCodecRegistry());
@@ -36,62 +40,73 @@ public class EmpresaService implements IEmpresaRespository {
 		return new MongoClient(host, MongoClientOptions.builder().codecRegistry(createCodecRegistry()).build());
 	}
 	
-	private void closeMongoConnection() {
+	private void closeConnection() {
 		mongoClient().close();
 	}
 
-	private void connectAndGetCollection() {
-		MongoDatabase database = getMongoDatabase().withCodecRegistry(createCodecRegistry());
-		collection = database.getCollection("empresa", Empresa.class).withCodecRegistry(createCodecRegistry());
+	private void connectCollection() {
+		MongoDatabase mongoDatabase = getMongoDatabase().withCodecRegistry(createCodecRegistry());
+		collection = mongoDatabase.getCollection("empresa", Empresa.class).withCodecRegistry(createCodecRegistry());
 	}
 
 	@Override
 	public void save(Empresa empresa) {
-		connectAndGetCollection();
+		try {
+		connectCollection();
 		CodecRegistry codecRegistry = createCodecRegistry();
-		if (findById(empresa.getCnpj()) != null) {
-			throw new IllegalArgumentException("Empresa já cadastrada");
-		}
 		collection.withCodecRegistry(codecRegistry).insertOne(empresa);
-		closeMongoConnection();
+		closeConnection();
+		}catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+		}
 	}
 
-	private CodecRegistry createCodecRegistry() {
+	private static CodecRegistry createCodecRegistry() {
 		return CodecRegistries.fromRegistries(MongoClientSettings.getDefaultCodecRegistry(),
 				CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build()));
 	}
 
 	@Override
 	public void update(Empresa empresa) {
-		connectAndGetCollection();
+		try {
+		connectCollection();
 		CodecRegistry codecRegistry = createCodecRegistry();
 		Bson findByCnpj = Filters.eq("cnpj", empresa.getCnpj());
 		collection.withCodecRegistry(codecRegistry).replaceOne(findByCnpj, empresa);
-		closeMongoConnection();
+		closeConnection();
+		}catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+		}
 	}
 
 	@Override
 	public void deleteById(String cnpj) {
-		connectAndGetCollection();
-		if (findById(cnpj) == null) {
-			throw new IllegalArgumentException("Empresa não encontrada");
-		}
+		try {
+		connectCollection();
 		collection.deleteOne(Filters.eq("cnpj", cnpj));
-		closeMongoConnection();
+		closeConnection();
+		}catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+		}
 	}
 
 	@Override
 	public Empresa findById(String cnpj) {
-		connectAndGetCollection();
+		try {
+		connectCollection();
 		Bson findByCnpj = Filters.eq("cnpj", cnpj);
 		Empresa empresa = collection.find(findByCnpj).first();
-		closeMongoConnection();
+		closeConnection();
 		return empresa;
+		}catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+			return null;
+		}
 	}
 
 	@Override
 	public List<Empresa> findAll() {
-		connectAndGetCollection();
+		connectCollection();
 		MongoCursor<Empresa> cursor = collection.find().iterator();
 		List<Empresa> empresas = new ArrayList<>();
 		try {
@@ -99,11 +114,11 @@ public class EmpresaService implements IEmpresaRespository {
 				empresas.add(cursor.next());
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		} finally {
 			cursor.close();
 		}
-		closeMongoConnection();
+		closeConnection();
 		return empresas;
 	}
 

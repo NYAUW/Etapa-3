@@ -1,6 +1,7 @@
 package br.com.contmatic.easyrandom;
 
 import static br.com.contmatic.constante.Regex.NUMERO_TELEFONE;
+import static br.com.contmatic.constante.Regex.RAMAL;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -11,7 +12,6 @@ import org.jeasy.random.EasyRandom;
 import com.github.javafaker.Faker;
 
 import br.com.contmatic.cliente.Cadastro;
-import br.com.contmatic.constante.Regex;
 import br.com.contmatic.empresa.Empresa;
 import br.com.contmatic.empresa.Funcionario;
 import br.com.contmatic.endereco.Endereco;
@@ -79,8 +79,8 @@ public class EasyRandomClass {
 		telefone.setDdd(
 				(EnumDddsTelefone.values()[Double.valueOf(Math.random() * EnumDddsTelefone.values().length).intValue()])
 						.getDdd());
-		telefone.setNumero(faker.regexify(Regex.NUMERO_TELEFONE));
-		telefone.setRamal(faker.regexify(Regex.RAMAL));
+		telefone.setNumero(faker.regexify(NUMERO_TELEFONE));
+		telefone.setRamal(faker.regexify(RAMAL));
 		telefone.setTipo(
 				(EnumTipoTelefone.values()[Double.valueOf(Math.random() * EnumTipoTelefone.values().length).intValue()])
 						.getTipo());

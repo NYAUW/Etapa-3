@@ -5,7 +5,8 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ EmpresaServiceTest.class, MongoEmbedded.class })
-public class TestAllService {
+@SuiteClasses({ EmpresaServiceTest.class, CadastroServiceTest.class, FuncionarioServiceTest.class,
+		MongoEmbedded.class })
+public class RunServiceTest {
 
 }

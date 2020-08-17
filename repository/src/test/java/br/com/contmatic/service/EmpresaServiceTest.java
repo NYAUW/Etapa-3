@@ -1,11 +1,15 @@
 package br.com.contmatic.service;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import br.com.contmatic.easyrandom.EasyRandomClass;
 import br.com.contmatic.empresa.Empresa;
@@ -13,15 +17,18 @@ import br.com.contmatic.empresa.Empresa;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmpresaServiceTest {
 	
-    private static EmpresaService empresaService = new EmpresaService();
+    private static EmpresaService empresaService;
 
     private static Empresa empresa;
     
     private static EasyRandomClass random = EasyRandomClass.instanciaEasyRandomClass();
     
+    private static final Logger LOGGER = LoggerFactory.getLogger(CadastroServiceTest.class);
+    
 
     @BeforeClass
     public static void easyRandomDados() {
+    	empresaService = new EmpresaService();
     	empresa = random.empresaRandomizer();
         empresaService.save(empresa);
     }
@@ -32,7 +39,7 @@ public class EmpresaServiceTest {
             empresaService.save(empresa);
             assertEquals(empresa, empresaService.findById(empresa.getCnpj()));
         } catch (Exception e) {
-            e.printStackTrace();
+        	LOGGER.error(e.getMessage(), e);
         }
     }
 
@@ -49,13 +56,13 @@ public class EmpresaServiceTest {
     	empresa = random.empresaRandomizer();
     	empresaService.save(empresa);
     	empresaService.deleteById(empresa.getCnpj());
-    	assertEquals(null, empresaService.findById(empresa.getCnpj()));
+    	assertNull(empresaService.findById(empresa.getCnpj()));
     	empresaService.save(empresa);
     }
     
-    @Test(expected = IllegalArgumentException.class)
-    public void deve_retornar_exception_ao_tentar_deletar_empresa_que_nao_existe() {
-    	empresaService.deleteById("1");
+    @Test
+    public void deve_retornar_todas_empresas() {
+    	assertFalse(empresaService.findAll().isEmpty());
     }
 
 }

@@ -3,13 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.contmatic</groupId>
-	<artifactId>empresaa</artifactId>
+	<artifactId>empresa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	<modules>
+		<module>repository</module>
+		<module>empresa-model</module>
+		<module>empresa-common</module>
+	</modules>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -156,8 +161,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<modules>
-		<module>repository</module>
-		<module>empresa-model</module>
-	</modules>
 </project>
